@@ -13,6 +13,7 @@ const pizzas = [
     { name: 'BBQ Chicken', ingredients: 'Tomato, mozzarella, chicken, BBQ sauce', price: 7.99, image: '64cat.jpg' },
 ];
 const pizzaGrid = document.getElementById('pizza-grid');
+// Create element for each pizza in list
 pizzas.forEach(pizza => {
     const pizzaBit = document.createElement('a');
     const pizzaImg = document.createElement('img');
@@ -28,6 +29,7 @@ pizzas.forEach(pizza => {
     pizzaBit.href = `#`;
     pizzaBit.classList.add('pizza');
     pizzaGrid.appendChild(pizzaBit);
+    // SCRIPT THAT RUNS WHEN PIZZA IS CLICKED ---- ABDU!!!!!
     pizzaBit.addEventListener('click', () => {
         // ADD PIZZA TO BASKET
         console.log('Added pizza to basket:', pizza.name);
