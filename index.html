@@ -3,22 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Enrico </title>
+    <!---CSS link-->
     <link rel="stylesheet" href="css/style.css">
+    <!---JS links-->
     <script src="onStart.js" defer></script>
-    <title>Document</title>
+    <!---Boxicons link-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!---Google fonts links-->
+
 </head>
 <body>
     <header>
-        <h1>PIZZA</h1> <!--logo-->
+      <div class='logo'> <!--logo tähän-->
+        <h1>PIZZA</h1>
+      </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Create your own pizza</a></li>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">MENU</a></li>
+                <li><a href="#">CREATE YOUR OWN PIZZA</a></li>
             </ul>
         </nav>
+
+        <div class='user-info'>
+            <img src='img/64cat.jpg' alt='Profile picture'>
+            <span>Username</span>
+            <i class='bx bxs-down-arrow'></i>
+        </div>
     </header>
     <main>
+      <!-- Home page -->
       <div class='home-page'>
         <!-- Slider missä pizzoja -->
         <div class='slider'>
@@ -28,14 +43,15 @@
         <div class='create'>
             <h1>CREATE YOUR OWN PIZZA</h1>
             <p>Choose your favorite ingredients and create your own pizza</p>
-            <button>CREATE</button>
         </div>
       </div>
 
+      <!-- Menu page -->
       <div class='menu-page'>
 
       </div>
 
+      <!-- Create ur own pizza page -->
       <div class='create-page'>
 
       </div>
