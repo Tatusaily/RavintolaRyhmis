@@ -3,6 +3,7 @@
   --secondary-color: #F7AD45;
   --background-color: #FFF1D7;
   --text-color: #FFFF;
+  --shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   --header-height: 5rem;
 }
 
@@ -42,6 +43,7 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
+    box-shadow: var(--shadow);
 }
 
 nav ul{
@@ -72,6 +74,8 @@ nav a:hover {
     padding: 0.5%;
     background-color: var(--secondary-color);
     border-radius: 2.5%;
+    border: black 2px solid;
+    box-shadow: var(--shadow);
 }
 .user-info img {
     width: 2rem;
@@ -97,6 +101,7 @@ nav a:hover {
     overflow: hidden;
     position: relative;
     background-color: var(--secondary-color);
+    box-shadow: var(--shadow);
 }
 
 .create {
@@ -108,8 +113,10 @@ nav a:hover {
     background-color: var(--secondary-color);
     margin-top: 5%;
     padding: 2%;
+    box-shadow: var(--shadow);
 }
 
 footer {
   width: 100%;
+  background-color: var(--primary-color);
 }
