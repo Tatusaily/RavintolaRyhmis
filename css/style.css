@@ -3,21 +3,25 @@
   --secondary-color: #F7AD45;
   --background-color: #FFF1D7;
   --text-color: #FFFF;
-  --shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  --shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
   --header-height: 5rem;
+  --primary-gradient: linear-gradient(239deg, rgba(255,128,65,1) 0%, rgba(187,62,0,1) 100%);
+  --secondary-gradient: linear-gradient(239deg, rgba(255,186,87,1) 0%, rgba(247,173,69,1) 100%);
+  --background-gradient: linear-gradient(239deg, rgba(255,221,157,1) 0%, rgba(255,241,215,1) 100%);
+  --header-font: 'Bosa Nova';
+  --text-font: 'Montserrat';
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif; /* Use Arial font for all text */
   font-size: 21px;
 }
 
 body{
   background: var(--background-color);
-  background: radial-gradient(circle, rgba(255,241,215,1) 0%, rgba(255,232,190,1) 65%, rgba(255,222,160,1) 100%);
+  background: linear-gradient(90deg, rgba(52,145,42,1) 0%, rgba(52,145,42,1) 33.29%, rgba(249,251,247,1) 33.3%, rgba(249,251,247,1) 66.5%, rgba(180,6,20,1) 66.6%, rgba(180,6,20,1) 100%);
   color: var(--text-color);
   margin: 0;
   padding: 0;
@@ -33,7 +37,7 @@ main {
 }
 
 header {
-    background-color: var(--primary-color);
+    background: var(--primary-gradient);
     color: --text-color;
     position: fixed;
     width: 100%;
@@ -44,6 +48,7 @@ header {
     align-items: center;
     z-index: 1000;
     box-shadow: var(--shadow);
+    font-family: var(--header-font);
 }
 
 nav ul{
@@ -72,16 +77,18 @@ nav a:hover {
     justify-content: center;
     margin-right: 10%;
     padding: 0.5%;
-    background-color: var(--secondary-color);
+    background: var(--secondary-gradient);
     border-radius: 2.5%;
     border: black 2px solid;
     box-shadow: var(--shadow);
+    font-family: var(--text-font);
 }
 .user-info img {
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
     margin-right: 0.5rem;
+    border: 2px solid black;
 }
 .user-info span {
     font-size: 1rem;
@@ -118,7 +125,7 @@ nav a:hover {
     height: 20rem;
     overflow: hidden;
     position: relative;
-    background-color: var(--secondary-color);
+    background: var(--secondary-gradient);
     box-shadow: var(--shadow);
 }
 
@@ -132,9 +139,11 @@ nav a:hover {
     margin-top: 5%;
     padding: 2%;
     box-shadow: var(--shadow);
+    font-family: var(--text-font);
 }
 
 footer {
   width: 100%;
-  background-color: var(--primary-color);
+  background: var(--primary-gradient);
+  font-family: var(--text-font);
 }
