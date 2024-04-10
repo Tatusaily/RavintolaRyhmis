@@ -45,6 +45,10 @@ const homepage = document.getElementById('home-page');
 const menupage = document.getElementById('menu-page');
 const pizzapage = document.getElementById('create-page');
 const sitepages = [homepage, menupage, pizzapage];
+const homepageLink = document.getElementById('nav_homelink');
+const menupageLink = document.getElementById('nav_menulink');
+const pizzapageLink = document.getElementById('nav_pizzalink');
+const pageLinks = [homepageLink, menupageLink, pizzapageLink];
 
 // Navbar button functions
 document.getElementById('nav_homelink').addEventListener('click', () => {
@@ -52,18 +56,36 @@ document.getElementById('nav_homelink').addEventListener('click', () => {
         page.style.display = 'none';
     });
     homepage.style.display = 'flex';
+    pageLinks.forEach(link => {
+        link.style.color = 'var(--text-color)';
+        link.style.textDecoration = 'none';
+    });
+    homepageLink.style.color = 'var(--secondary-color)';
+    homepageLink.style.textDecoration = 'underline';
 });
 document.getElementById('nav_menulink').addEventListener('click', () => {
     sitepages.forEach(page => {
         page.style.display = 'none';
     });
     menupage.style.display = 'flex';
+    pageLinks.forEach(link => {
+        link.style.color = 'var(--text-color)';
+        link.style.textDecoration = 'none';
+    });
+    menupageLink.style.color = 'var(--secondary-color)';
+    menupageLink.style.textDecoration = 'underline';
 });
 document.getElementById('nav_pizzalink').addEventListener('click', () => {
     sitepages.forEach(page => {
         page.style.display = 'none';
     });
     pizzapage.style.display = 'flex';
+    pageLinks.forEach(link => {
+        link.style.color = 'var(--text-color)';
+        link.style.textDecoration = 'none';
+    });
+    pizzapageLink.style.color = 'var(--secondary-color)';
+    pizzapageLink.style.textDecoration = 'underline';
 });
 
 // Home page slideshow

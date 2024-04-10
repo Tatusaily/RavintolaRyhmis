@@ -68,7 +68,8 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--secondary-color); /* Change the text color to blue when hovering over a link */
+    color: var(--secondary-color);
+    text-decoration: underline;
 }
 
 .logo {
@@ -112,6 +113,10 @@ nav a:hover {
   display: none;
   align-items: center;
   flex-direction: column;
+  background: var(--secondary-gradient);
+  padding: 5%;
+  width: 50%;
+  box-shadow: var(--shadow);
 }
 #pizza-grid{
   display: grid;
@@ -205,7 +210,7 @@ nav a:hover {
     flex-direction: column;
     width: 70%;
     background-color: var(--secondary-color);
-    margin-top: 5%;
+    margin-top: 2%;
     padding: 2%;
     box-shadow: var(--shadow);
     font-family: var(--text-font);
