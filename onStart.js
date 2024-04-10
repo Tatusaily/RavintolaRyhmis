@@ -65,3 +65,40 @@ document.getElementById('nav_pizzalink').addEventListener('click', () => {
     });
     pizzapage.style.display = 'flex';
 });
+
+// Home page slideshow
+let slideIndex = 1;
+let timeoutId;
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function stopAutoSlide() {
+  clearInterval(timeoutId);
+  timeoutId = null;
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("sliderFade");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  else if (n < 1) {slideIndex = slides.length}
+  else {slideIndex = n}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+
+function startAutoSlide() {
+  timeoutId = setInterval(function() { plusSlides(1); }, 5000);
+}
+
+showSlides(slideIndex);
+startAutoSlide();
