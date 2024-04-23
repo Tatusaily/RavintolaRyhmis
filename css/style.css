@@ -244,4 +244,5 @@ footer {
   width: 100%;
   background: var(--primary-gradient);
   font-family: var(--text-font);
+  padding: 0.5rem 1rem;
 }
