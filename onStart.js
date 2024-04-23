@@ -11,6 +11,52 @@ const menupageLink = document.getElementById('nav_menulink');
 const pizzapageLink = document.getElementById('nav_pizzalink');
 const pageLinks = [homepageLink, menupageLink, pizzapageLink];
 
+// Set the href attributes of the page links to the corresponding hashes
+homepageLink.href = '#home';
+menupageLink.href = '#menu';
+pizzapageLink.href = '#create';
+
+// Function to handle hash changes
+function handleHashChange() {
+    const hash = window.location.hash || '#home';
+
+    // Hide all pages and remove the 'active' class from all links
+    sitepages.forEach(page => page.style.display = 'none');
+    pageLinks.forEach(link => link.classList.remove('active'));
+
+    // Show the correct page and add the 'active' class to the correct link based on the hash
+    switch(hash) {
+        case '#home':
+            homepage.style.display = 'flex';
+            homepageLink.classList.add('active');
+            break;
+        case '#menu':
+            menupage.style.display = 'flex';
+            menupageLink.classList.add('active');
+            break;
+        case '#create':
+            pizzapage.style.display = 'flex';
+            pizzapageLink.classList.add('active');
+            break;
+        default:
+            homepage.style.display = 'flex';
+            homepageLink.classList.add('active');
+            break;
+    }
+}
+
+// Event listener for hash changes
+window.addEventListener('hashchange', handleHashChange);
+
+// Initial hash handling
+handleHashChange();
+
+// Reset page to Home on load.
+sitepages.forEach(page => {
+  page.style.display = 'none';
+});
+homepage.style.display = 'flex';
+
 
 // Populate pizza grid:
 // GET PIZZAS FROM DATABASE
@@ -54,29 +100,6 @@ pizzas.forEach(pizza => {
 });
 
 
-// Navbar button functions
-for(let i = 0; i < sitepages.length; i++) {
-    pageLinks[i].addEventListener('click', () => {
-        sitepages.forEach(page => {
-            page.style.display = 'none';
-        });
-        sitepages[i].style.display = 'flex';
-        pageLinks.forEach(link => {
-            link.style.color = 'var(--text-color)';
-            link.style.textDecoration = 'none';
-        });
-        pageLinks[i].style.color = 'var(--secondary-color)';
-        pageLinks[i].style.textDecoration = 'underline';
-    });
-}
-
-// Reset page to Home on load.
-sitepages.forEach(page => {
-    page.style.display = 'none';
-});
-homepage.style.display = 'flex';
-
-        
 // Home page slideshow
 let slideIndex = 1;
 let timeoutId;
