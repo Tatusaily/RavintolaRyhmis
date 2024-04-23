@@ -69,6 +69,13 @@ for(let i = 0; i < sitepages.length; i++) {
         pageLinks[i].style.textDecoration = 'underline';
     });
 }
+
+// Reset page to Home on load.
+sitepages.forEach(page => {
+    page.style.display = 'none';
+});
+homepage.style.display = 'flex';
+
         
 // Home page slideshow
 let slideIndex = 1;
