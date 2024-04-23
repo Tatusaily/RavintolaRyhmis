@@ -108,19 +108,43 @@ nav a:hover {
   flex-direction: column;
 }
 
-#menu-page{
-  width: 100%;
-  display: none;
+#menu-page {
+  width: 70%;
+  position: relative;
+  display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   background: var(--secondary-gradient);
   padding: 5%;
-  width: 50%;
   box-shadow: var(--shadow);
 }
-#pizza-grid{
+.menu-text {
+  order: 1;
+  text-align: center;
+  /* Add other styles as needed, such as padding, color, etc. */
+}
+#pizza-grid {
+  order: 2;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5%;
+  width: 100%;
+  justify-items: center;
+}
+
+#pizza-grid a {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  color: var(--text-color);
+  background-color: #BB3E00;
+  margin: 10%;
+  padding: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #pizza-page{
