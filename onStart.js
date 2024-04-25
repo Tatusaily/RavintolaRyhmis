@@ -1,5 +1,17 @@
 // Let's put code that we want to run on start here:
 
+//CONSTS
+// Pages and links in same order, used in event listeners
+const homepage = document.getElementById('home-page');
+const menupage = document.getElementById('menu-page');
+const pizzapage = document.getElementById('create-page');
+const sitepages = [homepage, menupage, pizzapage];
+const homepageLink = document.getElementById('nav_homelink');
+const menupageLink = document.getElementById('nav_menulink');
+const pizzapageLink = document.getElementById('nav_pizzalink');
+const pageLinks = [homepageLink, menupageLink, pizzapageLink];
+
+
 // Populate pizza grid:
 // GET PIZZAS FROM DATABASE
 // placeholder: name, ingredients, price, image
@@ -16,7 +28,7 @@ const pizzas = [
 
 const pizzaGrid = document.createElement('div');
 pizzaGrid.id = 'pizza-grid';
-document.getElementById('menu-page').appendChild(pizzaGrid);
+menupage.appendChild(pizzaGrid);
 
 // Create element for each pizza in list
 pizzas.forEach(pizza => {
@@ -41,53 +53,30 @@ pizzas.forEach(pizza => {
     });
 });
 
-const homepage = document.getElementById('home-page');
-const menupage = document.getElementById('menu-page');
-const pizzapage = document.getElementById('create-page');
-const sitepages = [homepage, menupage, pizzapage];
-const homepageLink = document.getElementById('nav_homelink');
-const menupageLink = document.getElementById('nav_menulink');
-const pizzapageLink = document.getElementById('nav_pizzalink');
-const pageLinks = [homepageLink, menupageLink, pizzapageLink];
 
 // Navbar button functions
-document.getElementById('nav_homelink').addEventListener('click', () => {
-    sitepages.forEach(page => {
-        page.style.display = 'none';
+for(let i = 0; i < sitepages.length; i++) {
+    pageLinks[i].addEventListener('click', () => {
+        sitepages.forEach(page => {
+            page.style.display = 'none';
+        });
+        sitepages[i].style.display = 'flex';
+        pageLinks.forEach(link => {
+            link.style.color = 'var(--text-color)';
+            link.style.textDecoration = 'none';
+        });
+        pageLinks[i].style.color = 'var(--secondary-color)';
+        pageLinks[i].style.textDecoration = 'underline';
     });
-    homepage.style.display = 'flex';
-    pageLinks.forEach(link => {
-        link.style.color = 'var(--text-color)';
-        link.style.textDecoration = 'none';
-    });
-    homepageLink.style.color = 'var(--secondary-color)';
-    homepageLink.style.textDecoration = 'underline';
-});
-document.getElementById('nav_menulink').addEventListener('click', () => {
-    sitepages.forEach(page => {
-        page.style.display = 'none';
-    });
-    menupage.style.display = 'flex';
-    pageLinks.forEach(link => {
-        link.style.color = 'var(--text-color)';
-        link.style.textDecoration = 'none';
-    });
-    menupageLink.style.color = 'var(--secondary-color)';
-    menupageLink.style.textDecoration = 'underline';
-});
-document.getElementById('nav_pizzalink').addEventListener('click', () => {
-    sitepages.forEach(page => {
-        page.style.display = 'none';
-    });
-    pizzapage.style.display = 'flex';
-    pageLinks.forEach(link => {
-        link.style.color = 'var(--text-color)';
-        link.style.textDecoration = 'none';
-    });
-    pizzapageLink.style.color = 'var(--secondary-color)';
-    pizzapageLink.style.textDecoration = 'underline';
-});
+}
 
+// Reset page to Home on load.
+sitepages.forEach(page => {
+    page.style.display = 'none';
+});
+homepage.style.display = 'flex';
+
+        
 // Home page slideshow
 let slideIndex = 1;
 let timeoutId;
