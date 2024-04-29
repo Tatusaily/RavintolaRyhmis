@@ -37,6 +37,7 @@ main {
   flex-direction: column;
   margin: 5% 10% 0 10%;
   min-height: 100vh;
+  position: relative;
 }
 
 header {
@@ -141,17 +142,16 @@ nav .active {
   flex-direction: column;
 }
 
-#menu-page {
+#menu-page {  
   width: 100%;
   margin : 10% 0 10% 0;
-  position: absolute;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background: transparent;
   padding: 5%;
-  box-shadow: var(--shadow);
 }
 
 #menu-page h2 {
@@ -188,6 +188,7 @@ nav .active {
   align-items: center;
   flex-direction: row;
   overflow: hidden;
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.7);
 }
 
 .pizza-info {
@@ -198,7 +199,6 @@ nav .active {
   color: var(--text-color);
   padding: 5%;
   box-shadow: var(--shadow);
-  z-index: 1000;
   flex-direction: column;
 
 }
@@ -302,5 +302,4 @@ footer {
   background: var(--primary-gradient);
   font-family: var(--text-font);
   padding: 0.5rem 1rem;
-  display: none;
 }
