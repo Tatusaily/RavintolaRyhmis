@@ -36,6 +36,12 @@ main {
   height: 100vh;
 }
 
+#background {
+
+  height: 100%;
+
+}
+
 header {
     background: var(--primary-gradient);
     color: --text-color;
@@ -136,6 +142,7 @@ nav a:hover {
 
 #menu-page {
   width: 70%;
+  height: 80%;
   position: relative;
   display: flex;
   align-items: center;
@@ -145,13 +152,8 @@ nav a:hover {
   padding: 5%;
   box-shadow: var(--shadow);
 }
-.menu-text {
-  order: 1;
-  text-align: center;
-  /* Add other styles as needed, such as padding, color, etc. */
-}
+
 #pizza-grid {
-  order: 2;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 5%;

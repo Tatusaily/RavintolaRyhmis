@@ -26,9 +26,12 @@ const pizzas = [
     { name: 'BBQ Chicken', ingredients: 'Tomato, mozzarella, chicken, BBQ sauce', price: 7.99, image: '/img/64cat.jpg' },
 ];
 
+const background = document.createElement('div');
 const pizzaGrid = document.createElement('div');
+background.id = 'background';
 pizzaGrid.id = 'pizza-grid';
-menupage.appendChild(pizzaGrid);
+menupage.appendChild(background);
+background.appendChild(pizzaGrid);
 
 // Create element for each pizza in list
 pizzas.forEach(pizza => {
