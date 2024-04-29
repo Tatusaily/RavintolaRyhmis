@@ -72,6 +72,12 @@ const pizzas = [
     { name: 'Meat Feast', ingredients: 'Tomato, mozzarella, pepperoni, ham, bacon, chicken', price: 8.99, image: '/img/64cat.jpg' },
     { name: 'Vegan', ingredients: 'Tomato, vegan cheese, peppers, mushrooms, olives', price: 7.99, image: '/img/64cat.jpg' },
     { name: 'BBQ Chicken', ingredients: 'Tomato, mozzarella, chicken, BBQ sauce', price: 7.99, image: '/img/64cat.jpg' },
+    { name: 'Seafood', ingredients: 'Tomato, mozzarella, prawns, tuna, anchovies', price: 8.99, image: '/img/64cat.jpg' },
+    { name: 'Spicy Beef', ingredients: 'Tomato, mozzarella, beef, jalapenos, chilli', price: 7.99, image: '/img/64cat.jpg' },
+    { name: 'Four Cheese', ingredients: 'Tomato, mozzarella, cheddar, parmesan, gorgonzola', price: 7.99, image: '/img/64cat.jpg' },
+    { name: 'Mushroom', ingredients: 'Tomato, mozzarella, mushrooms, garlic, parsley', price: 6.99, image: '/img/64cat.jpg' },
+    { name: 'Chicken & Sweetcorn', ingredients: 'Tomato, mozzarella, chicken, sweetcorn', price: 7.99, image: '/img/64cat.jpg' },
+
 ];
 
 const background = document.createElement('div');
@@ -85,15 +91,18 @@ background.appendChild(pizzaGrid);
 pizzas.forEach(pizza => {
     const pizzaBit = document.createElement('a');
     const pizzaImg = document.createElement('img');
+    const pizzaInfo = document.createElement('div');
     const pizzaName = document.createElement('h3');
     const pizzaPrice = document.createElement('p');
+    pizzaInfo.classList.add('pizza-info');
     pizzaImg.src = pizza.image;
     pizzaImg.alt = pizza.name;
     pizzaName.textContent = pizza.name;
     pizzaPrice.textContent = `£${pizza.price}`;
     pizzaBit.appendChild(pizzaImg);
-    pizzaBit.appendChild(pizzaName);
-    pizzaBit.appendChild(pizzaPrice);
+    pizzaBit.appendChild(pizzaInfo);
+    pizzaInfo.appendChild(pizzaName);
+    pizzaInfo.appendChild(pizzaPrice);
     pizzaBit.href = `#`;
     pizzaBit.classList.add('pizza');
     pizzaGrid.appendChild(pizzaBit);
@@ -120,12 +129,6 @@ for(let i = 0; i < sitepages.length; i++) {
         pageLinks[i].style.textDecoration = 'underline';
     });
 }
-
-// Reset page to Home on load.
-sitepages.forEach(page => {
-    page.style.display = 'none';
-});
-homepage.style.display = 'flex';
 
 // User dropdown menu
 document.querySelector('.user-info').addEventListener('click', () => {

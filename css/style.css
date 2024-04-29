@@ -145,7 +145,7 @@ nav .active {
 }
 
 #menu-page {
-  width: 70%;
+  width: 100%;
   height: 80%;
   position: relative;
   display: flex;
@@ -159,10 +159,16 @@ nav .active {
 
 #pizza-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   grid-gap: 5%;
   width: 100%;
   justify-items: center;
+}
+
+#pizza-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 #pizza-grid a {
@@ -177,6 +183,20 @@ nav .active {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.pizza-info {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: var(--secondary-gradient);
+  color: var(--text-color);
+  padding: 5%;
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  flex-direction: column;
+
 }
 
 #pizza-page{
