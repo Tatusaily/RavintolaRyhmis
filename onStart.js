@@ -76,7 +76,17 @@ sitepages.forEach(page => {
 });
 homepage.style.display = 'flex';
 
-        
+// User dropdown menu
+document.querySelector('.user-info').addEventListener('click', () => {
+  const dropdownMenu = document.querySelector('#dropdown-menu');
+  if (dropdownMenu.style.display === 'none') {
+    dropdownMenu.style.display = 'flex';
+  } else {
+    dropdownMenu.style.display = 'none';
+  }
+});
+
+
 // Home page slideshow
 let slideIndex = 1;
 let timeoutId;

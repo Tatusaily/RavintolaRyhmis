@@ -88,6 +88,12 @@ nav a:hover {
     border: black 2px solid;
     box-shadow: var(--shadow);
     font-family: var(--text-font);
+    position: relative;
+}
+.user-info:hover {
+    cursor: pointer;
+    color: var(--primary-color);
+
 }
 .user-info img {
     width: 2rem;
@@ -99,6 +105,26 @@ nav a:hover {
 .user-info span {
     font-size: 1rem;
     margin-right: 0.5rem;
+}
+
+#dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  background: var(--secondary-gradient);
+  width: 100%;
+  border-radius: 2.5%;
+  border: black 2px solid;
+  box-shadow: var(--shadow);
+  font-family: var(--text-font);
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#dropdown-menu ul {
+  list-style-type: none;
 }
 
 #home-page {
