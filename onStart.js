@@ -52,10 +52,12 @@ window.addEventListener('hashchange', handleHashChange);
 handleHashChange();
 
 // Reset page to Home on load.
+/*
 sitepages.forEach(page => {
   page.style.display = 'none';
 });
 homepage.style.display = 'flex';
+*/
 
 
 // Populate pizza grid:
