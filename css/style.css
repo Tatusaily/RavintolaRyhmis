@@ -223,7 +223,9 @@ footer {
 }
 
 
-/* shopping cart */
+
+
+/*
 .shoppingCart {
   width: 20%;
   display: flex;
@@ -237,9 +239,9 @@ footer {
   margin-right: 30px;
 }
 
-/* Luo oma pizza -sivun tyyli */
+
 #create-page {
-    display: none; /* Piilota oletusarvoisesti */
+    display: none;
     padding: 20px;
     background-color: bisque;
     border-radius: 5px;
@@ -285,3 +287,4 @@ button:hover {
 }
 
 
+/**
