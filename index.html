@@ -1,99 +1,148 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pizza Enrico </title>
-    <link rel="icon" href="img/favicon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizza Enrico</title>
+    <link rel="icon" href="img/favicon.png" />
     <!---CSS link-->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <!---JS links-->
     <script src="onStart.js" defer></script>
     <!---Boxicons link-->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!---Google fonts links-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-      <div class='logo'> <!--logo tähän-->
-        <img src='img/favicon.png' alt='Logo'>
+      <div class="logo">
+        <!--logo tähän-->
+        <img src="img/favicon.png" alt="Logo" />
         <h1>PIZZA</h1>
       </div>
-        <nav>
-            <ul>
-                <li><a href="#" id="nav_homelink">HOME</a></li>
-                <li><a href="#" id="nav_menulink">MENU</a></li>
-                <li><a href="#" id="nav_pizzalink">CREATE YOUR OWN PIZZA</a></li>
-            </ul>
-        </nav>
 
-        <div class='user-info'>
-            <img src='img/64cat.jpg' alt='Profile picture'>
-            <span>Username</span>
-            <i class='bx bxs-down-arrow'></i>
-        </div>
+      <div class="shoppingCart">
+        <!--ostoskori tähän-->
+        <ul class="cart-items">
+          <!-- Ostoskorin tuotteet tähän -->
+        </ul>
+
+        <svg
+          id="add-to-cart"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
+          />
+        </svg>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#" id="nav_homelink">HOME</a></li>
+          <li><a href="#" id="nav_menulink">MENU</a></li>
+          <li><a href="#" id="nav_pizzalink">CREATE YOUR OWN PIZZA</a></li>
+        </ul>
+      </nav>
+
+      <div class="user-info">
+        <img src="img/64cat.jpg" alt="Profile picture" />
+        <span>Username</span>
+        <i class="bx bxs-down-arrow"></i>
+      </div>
     </header>
     <main>
       <!-- Home page -->
-      <div class='contentpage' id="home-page">
+      <div class="contentpage" id="home-page">
         <!-- Slider missä pizzoja -->
-        <div class='slider'>
-          <div class='sliderFade'>
-            <div class='slideNumber'>1 / 3</div>
-            <img src="img/64cat.jpg" style="width:100%">
-            <div class='sliderText'>Caption Text</div>
+        <div class="slider">
+          <div class="sliderFade">
+            <div class="slideNumber">1 / 3</div>
+            <img src="img/64cat.jpg" style="width: 100%" />
+            <div class="sliderText">Caption Text</div>
           </div>
 
-          <div class='sliderFade'>
-            <div class='slideNumber'>2 / 3</div>
-            <img src="img/hackerman.png" style="width:100%">
-            <div class='sliderText'>Caption Text</div>
+          <div class="sliderFade">
+            <div class="slideNumber">2 / 3</div>
+            <img src="img/hackerman.png" style="width: 100%" />
+            <div class="sliderText">Caption Text</div>
           </div>
 
-          <div class='sliderFade'>
-            <div class='slideNumber'>3 / 3</div>
-            <img src="img/jorma.jpg" style="width:100%">
-            <div class='sliderText'>Caption Text</div>
+          <div class="sliderFade">
+            <div class="slideNumber">3 / 3</div>
+            <img src="img/jorma.jpg" style="width: 100%" />
+            <div class="sliderText">Caption Text</div>
           </div>
 
-          <a class='prev' onclick='stopAutoSlide(); plusSlides(-1)'>&#10094;</a>
-          <a class='next' onclick='stopAutoSlide(); plusSlides(1)'>&#10095;</a>
+          <a class="prev" onclick="stopAutoSlide(); plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="stopAutoSlide(); plusSlides(1)">&#10095;</a>
         </div>
-        <br>
+        <br />
 
         <!-- Dots -->
-        <div style='text-align:center'>
-          <span class='dot' onclick='currentSlide(1)'></span>
-          <span class='dot' onclick='currentSlide(2)'></span>
-          <span class='dot' onclick='currentSlide(3)'></span>
+        <div style="text-align: center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
         </div>
 
         <!-- Kuva josta pääsee tekemään oman pizzan -->
-        <div class='create'>
-            <h1>CREATE YOUR OWN PIZZA</h1>
-            <p>Choose your favorite ingredients and create your own pizza</p>
+        <div class="create">
+          <h1>CREATE YOUR OWN PIZZA</h1>
+          <p>Choose your favorite ingredients and create your own pizza</p>
         </div>
       </div>
 
       <!-- Menu page -->
-      <div class='contentpage' id="menu-page">
+      <div class="contentpage" id="menu-page"></div>
 
+      <!-- creating your own pizza -->
+      <div class="contentpage" id="create-page">
+        <h3>Create your own pizza</h3>
+        <p>Size</p>
+        <div id="toppings-container">
+          <!-- Täytteet lisätään tähän -->
+          <div id="lihat" class="topping-category">
+            <h4>Lihat</h4>
+            <!-- Täytteet lisätään tähän diviin -->
+          </div>
+          <div id="juustot" class="topping-category">
+            <h4>Juustot</h4>
+            <!-- Täytteet lisätään tähän diviin -->
+          </div>
+          <div id="muut" class="topping-category">
+            <h4>Muut</h4>
+            <!-- Täytteet lisätään tähän diviin -->
+          </div>
+        </div>
+        <button onclick="submitToppings()">Lisää ostoskoriin</button>
       </div>
-
-      <!-- Create ur own pizza page -->
-      <div class='contentpage' id="create-page">
-
-      </div>
-
     </main>
     <footer>
-        <h2>lorem</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni minus vitae tempora quo est repellendus illo nostrum, incidunt recusandae aspernatur ullam enim suscipit eos maxime blanditiis, fuga ex, ratione consectetur!</p>
+      <h2>lorem</h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magni minus
+        vitae tempora quo est repellendus illo nostrum, incidunt recusandae
+        aspernatur ullam enim suscipit eos maxime blanditiis, fuga ex, ratione
+        consectetur!
+      </p>
     </footer>
-
-</body>
+  </body>
 </html>
