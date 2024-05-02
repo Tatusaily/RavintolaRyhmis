@@ -79,13 +79,26 @@ const pizzas = [
   { name: 'Chicken & Sweetcorn', ingredients: 'Tomato, mozzarella, chicken, sweetcorn', price: 7.99, image: '/img/pizzas/placeholder_pizza.jpg' },
 ];
 
-const pizzaGrid = document.createElement('div');
-const menuTitle = document.createElement('h2');
-pizzaGrid.id = 'pizza-grid';
-menuTitle.textContent = 'MENU';
+// Create menu title
+const menuTitle = document.createElement('div');
+const menuTitleBox = document.createElement('div');
+const menuTitleText = document.createElement('h2');
+
 menuTitle.classList.add('menu-title');
+menuTitleBox.classList.add('menu-title-box');
+menuTitleText.classList.add('menu-title-text');
+menuTitleText.textContent = 'MENU';
+
+menuTitle.appendChild(menuTitleBox);
+menuTitleBox.appendChild(menuTitleText);
 menupage.appendChild(menuTitle);
+
+// Create pizza grid
+const pizzaGrid = document.createElement('div');
+pizzaGrid.id = 'pizza-grid';
 menupage.appendChild(pizzaGrid);
+
+
 
 
 // Create element for each pizza in list
@@ -95,6 +108,8 @@ pizzas.forEach(pizza => {
     const pizzaInfo = document.createElement('div');
     const pizzaName = document.createElement('h3');
     const pizzaPrice = document.createElement('p');
+    const pizzaText = document.createElement('p');
+    pizzaText.textContent = 'lorem ipsum dolor sit amet, consectetur adipiscing elit.';
     pizzaInfo.classList.add('pizza-info');
     pizzaImg.src = pizza.image;
     pizzaImg.alt = pizza.name;
@@ -104,6 +119,7 @@ pizzas.forEach(pizza => {
     pizzaBit.appendChild(pizzaInfo);
     pizzaInfo.appendChild(pizzaName);
     pizzaInfo.appendChild(pizzaPrice);
+    pizzaInfo.appendChild(pizzaText);
     pizzaBit.href = `#`;
     pizzaBit.classList.add('pizza');
     pizzaGrid.appendChild(pizzaBit);

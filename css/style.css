@@ -10,7 +10,10 @@
   --background-gradient: linear-gradient(239deg, rgba(255,221,157,1) 0%, rgba(255,241,215,1) 100%);
   --header-font: 'Bosa Nova';
   --text-font: 'Montserrat';
+  --menu-font: 'Bilbo';
 }
+
+
 
 * {
   margin: 0;
@@ -142,7 +145,7 @@ nav .active {
   flex-direction: column;
 }
 
-#menu-page {  
+#menu-page {
   width: 100%;
   margin : 10% 0 10% 0;
   position: relative;
@@ -154,8 +157,23 @@ nav .active {
   padding: 5%;
 }
 
-#menu-page h2 {
-  font-family: var(--header-font);
+.menu-title {
+  border: 2px solid black;
+  padding: 0.2rem;
+  min-height: fit-content;
+  min-width: fit-content;
+}
+.menu-title div {
+  border: 2px dashed black;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-title div h2 {
+  font-family: var(--menu-font);
+  color: white;
   font-size: 1.5rem;
   margin-bottom: 2%;
   text-shadow: 2px 2px 4px black;
@@ -163,7 +181,7 @@ nav .active {
 
 #pizza-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 5%;
   width: 100%;
   justify-items: center;
@@ -180,15 +198,12 @@ nav .active {
   width: 100%;
   min-height: 100%;
   color: var(--text-color);
-  background-color: #BB3E00;
   margin: 2%;
-  padding: 5%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
   overflow: hidden;
-  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.7);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  border: 1px black solid;
 }
 
 .pizza-info {
