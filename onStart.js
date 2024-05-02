@@ -2,51 +2,51 @@
 
 //CONSTS
 // Pages and links in same order, used in event listeners
-const homepage = document.getElementById('home-page');
-const menupage = document.getElementById('menu-page');
-const pizzapage = document.getElementById('create-page');
+const homepage = document.getElementById("home-page");
+const menupage = document.getElementById("menu-page");
+const pizzapage = document.getElementById("create-page");
 const sitepages = [homepage, menupage, pizzapage];
-const homepageLink = document.getElementById('nav_homelink');
-const menupageLink = document.getElementById('nav_menulink');
-const pizzapageLink = document.getElementById('nav_pizzalink');
+const homepageLink = document.getElementById("nav_homelink");
+const menupageLink = document.getElementById("nav_menulink");
+const pizzapageLink = document.getElementById("nav_pizzalink");
 const pageLinks = [homepageLink, menupageLink, pizzapageLink];
 
 // Set the href attributes of the page links to the corresponding hashes
-homepageLink.href = '#home';
-menupageLink.href = '#menu';
-pizzapageLink.href = '#create';
+homepageLink.href = "#home";
+menupageLink.href = "#menu";
+pizzapageLink.href = "#create";
 
 // Function to handle hash changes
 function handleHashChange() {
-    const hash = window.location.hash || '#home';
+  const hash = window.location.hash || "#home";
 
-    // Hide all pages and remove the 'active' class from all links
-    sitepages.forEach(page => page.style.display = 'none');
-    pageLinks.forEach(link => link.classList.remove('active'));
+  // Hide all pages and remove the 'active' class from all links
+  sitepages.forEach((page) => (page.style.display = "none"));
+  pageLinks.forEach((link) => link.classList.remove("active"));
 
-    // Show the correct page and add the 'active' class to the correct link based on the hash
-    switch(hash) {
-        case '#home':
-            homepage.style.display = 'flex';
-            homepageLink.classList.add('active');
-            break;
-        case '#menu':
-            menupage.style.display = 'flex';
-            menupageLink.classList.add('active');
-            break;
-        case '#create':
-            pizzapage.style.display = 'flex';
-            pizzapageLink.classList.add('active');
-            break;
-        default:
-            homepage.style.display = 'flex';
-            homepageLink.classList.add('active');
-            break;
-    }
+  // Show the correct page and add the 'active' class to the correct link based on the hash
+  switch (hash) {
+    case "#home":
+      homepage.style.display = "flex";
+      homepageLink.classList.add("active");
+      break;
+    case "#menu":
+      menupage.style.display = "flex";
+      menupageLink.classList.add("active");
+      break;
+    case "#create":
+      pizzapage.style.display = "flex";
+      pizzapageLink.classList.add("active");
+      break;
+    default:
+      homepage.style.display = "flex";
+      homepageLink.classList.add("active");
+      break;
+  }
 }
 
 // Event listener for hash changes
-window.addEventListener('hashchange', handleHashChange);
+window.addEventListener("hashchange", handleHashChange);
 
 // Initial hash handling
 handleHashChange();
@@ -59,24 +59,83 @@ sitepages.forEach(page => {
 homepage.style.display = 'flex';
 */
 
-
 // Populate pizza grid:
 // GET PIZZAS FROM DATABASE
 // placeholder: name, ingredients, price, image
 
 const pizzas = [
-  { name: 'Margherita', ingredients: 'Tomato, mozzarella, basil', price: 5.99, image: '/img/pizzas/placeholder_pizza.jpg' },
-  { name: 'Pepperoni', ingredients: 'Tomato, mozzarella, pepperoni', price: 6.99, image: '/img/pizzas/placeholder_pizza.jpg' },
-  { name: 'Hawaiian', ingredients: 'Tomato, mozzarella, ham, pineapple', price: 7.99, image: '/img/pizzas/placeholder_pizza.jpg' },
-  { name: 'Vegetarian', ingredients: 'Tomato, mozzarella, peppers, mushrooms, olives', price: 6.99, image: '/img/pizzas/placeholder_pizza.jpg' },
-  { name: 'Meat Feast', ingredients: 'Tomato, mozzarella, pepperoni, ham, bacon, chicken', price: 8.99, image: '/img/pizzas/placeholder_pizza.jpg' },
-  { name: 'Vegan', ingredients: 'Tomato, vegan cheese, peppers, mushrooms, olives', price: 7.99, image: '/img/pizzas/placeholder_pizza.jpg' },
-  { name: 'BBQ Chicken', ingredients: 'Tomato, mozzarella, chicken, BBQ sauce', price: 7.99, image: '/img/pizzas/placeholder_pizza.jpg' },
-  { name: 'Seafood', ingredients: 'Tomato, mozzarella, prawns, tuna, anchovies', price: 8.99, image: '/img/pizzas/placeholder_pizza.jpg' },
-  { name: 'Spicy Beef', ingredients: 'Tomato, mozzarella, beef, jalapenos, chilli', price: 7.99, image: '/img/pizzas/placeholder_pizza.jpg' },
-  { name: 'Four Cheese', ingredients: 'Tomato, mozzarella, cheddar, parmesan, gorgonzola', price: 7.99, image: '/img/pizzas/placeholder_pizza.jpg' },
-  { name: 'Mushroom', ingredients: 'Tomato, mozzarella, mushrooms, garlic, parsley', price: 6.99, image: '/img/pizzas/placeholder_pizza.jpg' },
-  { name: 'Chicken & Sweetcorn', ingredients: 'Tomato, mozzarella, chicken, sweetcorn', price: 7.99, image: '/img/pizzas/placeholder_pizza.jpg' },
+  {
+    name: "Margherita",
+    ingredients: "Tomato, mozzarella, basil",
+    price: 5.99,
+    image: "/img/pizzas/placeholder_pizza.jpg",
+  },
+  {
+    name: "Pepperoni",
+    ingredients: "Tomato, mozzarella, pepperoni",
+    price: 6.99,
+    image: "/img/pizzas/placeholder_pizza.jpg",
+  },
+  {
+    name: "Hawaiian",
+    ingredients: "Tomato, mozzarella, ham, pineapple",
+    price: 7.99,
+    image: "/img/pizzas/placeholder_pizza.jpg",
+  },
+  {
+    name: "Vegetarian",
+    ingredients: "Tomato, mozzarella, peppers, mushrooms, olives",
+    price: 6.99,
+    image: "/img/pizzas/placeholder_pizza.jpg",
+  },
+  {
+    name: "Meat Feast",
+    ingredients: "Tomato, mozzarella, pepperoni, ham, bacon, chicken",
+    price: 8.99,
+    image: "/img/pizzas/placeholder_pizza.jpg",
+  },
+  {
+    name: "Vegan",
+    ingredients: "Tomato, vegan cheese, peppers, mushrooms, olives",
+    price: 7.99,
+    image: "/img/pizzas/placeholder_pizza.jpg",
+  },
+  {
+    name: "BBQ Chicken",
+    ingredients: "Tomato, mozzarella, chicken, BBQ sauce",
+    price: 7.99,
+    image: "/img/pizzas/placeholder_pizza.jpg",
+  },
+  {
+    name: "Seafood",
+    ingredients: "Tomato, mozzarella, prawns, tuna, anchovies",
+    price: 8.99,
+    image: "/img/pizzas/placeholder_pizza.jpg",
+  },
+  {
+    name: "Spicy Beef",
+    ingredients: "Tomato, mozzarella, beef, jalapenos, chilli",
+    price: 7.99,
+    image: "/img/pizzas/placeholder_pizza.jpg",
+  },
+  {
+    name: "Four Cheese",
+    ingredients: "Tomato, mozzarella, cheddar, parmesan, gorgonzola",
+    price: 7.99,
+    image: "/img/pizzas/placeholder_pizza.jpg",
+  },
+  {
+    name: "Mushroom",
+    ingredients: "Tomato, mozzarella, mushrooms, garlic, parsley",
+    price: 6.99,
+    image: "/img/pizzas/placeholder_pizza.jpg",
+  },
+  {
+    name: "Chicken & Sweetcorn",
+    ingredients: "Tomato, mozzarella, chicken, sweetcorn",
+    price: 7.99,
+    image: "/img/pizzas/placeholder_pizza.jpg",
+  },
 ];
 
 // Create menu title
@@ -130,40 +189,38 @@ pizzas.forEach(pizza => {
     });
 });
 
-
 // Navbar button functions
-for(let i = 0; i < sitepages.length; i++) {
-    pageLinks[i].addEventListener('click', () => {
-        sitepages.forEach(page => {
-            page.style.display = 'none';
-        });
-        sitepages[i].style.display = 'flex';
-        pageLinks.forEach(link => {
-            link.style.color = 'var(--text-color)';
-            link.style.textDecoration = 'none';
-        });
-        pageLinks[i].style.color = 'var(--secondary-color)';
-        pageLinks[i].style.textDecoration = 'underline';
+for (let i = 0; i < sitepages.length; i++) {
+  pageLinks[i].addEventListener("click", () => {
+    sitepages.forEach((page) => {
+      page.style.display = "none";
     });
+    sitepages[i].style.display = "flex";
+    pageLinks.forEach((link) => {
+      link.style.color = "var(--text-color)";
+      link.style.textDecoration = "none";
+    });
+    pageLinks[i].style.color = "var(--secondary-color)";
+    pageLinks[i].style.textDecoration = "underline";
+  });
 }
 
 // User dropdown menu
-document.querySelector('.user-info').addEventListener('click', () => {
-  const dropdownMenu = document.querySelector('#dropdown-menu');
-  if (dropdownMenu.style.display === 'none') {
-    dropdownMenu.style.display = 'flex';
+document.querySelector(".user-info").addEventListener("click", () => {
+  const dropdownMenu = document.querySelector("#dropdown-menu");
+  if (dropdownMenu.style.display === "none") {
+    dropdownMenu.style.display = "flex";
   } else {
-    dropdownMenu.style.display = 'none';
+    dropdownMenu.style.display = "none";
   }
 });
-
 
 // Home page slideshow
 let slideIndex = 1;
 let timeoutId;
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+  showSlides((slideIndex += n));
 }
 
 function stopAutoSlide() {
@@ -175,21 +232,27 @@ function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("sliderFade");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  else if (n < 1) {slideIndex = slides.length}
-  else {slideIndex = n}
+  if (n > slides.length) {
+    slideIndex = 1;
+  } else if (n < 1) {
+    slideIndex = slides.length;
+  } else {
+    slideIndex = n;
+  }
   for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+    dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
 
 function startAutoSlide() {
-  timeoutId = setInterval(function() { plusSlides(1); }, 5000);
+  timeoutId = setInterval(function () {
+    plusSlides(1);
+  }, 5000);
 }
 
 showSlides(slideIndex);
