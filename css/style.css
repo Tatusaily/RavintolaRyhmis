@@ -222,10 +222,6 @@ footer {
   font-family: var(--text-font);
 }
 
-
-
-
-/*
 .shoppingCart {
   width: 20%;
   display: flex;
@@ -287,4 +283,4 @@ button:hover {
 }
 
 
-/**
+

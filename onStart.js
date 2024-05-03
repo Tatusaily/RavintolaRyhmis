@@ -54,7 +54,7 @@ pizzaGrid.id = "pizza-grid";
 document.getElementById("menu-page").appendChild(pizzaGrid);
 
 // Create element for each pizza in list
-/**pizzas.forEach((pizza) => {
+pizzas.forEach((pizza) => {
   const pizzaBit = document.createElement("a");
   const pizzaImg = document.createElement("img");
   const pizzaName = document.createElement("h3");
