@@ -5,8 +5,13 @@ const fetchData = async (url, options = {}) => {
   return data;
 };
 
+// Apache reverseproxy /app osoitteessa ohjaa nodeen.
+// Käyttäjän selain yhdistää porttiin 80, joka ohjataan serverillä porttiin 3000.
+const baseurl = "http://10.120.32.53/app/api/v1"
+
+
 const getUser = async (userId) => {
-  const userData = await fetchData(`Osoite, josta käyttäjät haetaan/${userId}`);
+  const userData = await fetchData(`${baseurl}/users/${userId}`);
   return userData;
 };
 
