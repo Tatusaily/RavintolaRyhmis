@@ -172,54 +172,34 @@ document.getElementById("nav_pizzalink").addEventListener("click", function () {
   container.innerHTML = "";
 
   // Luo pizzan valintanapit
-  const sizes = [
-    { id: "small", name: "Small" },
-    { id: "medium", name: "Medium" },
-    { id: "large", name: "Large" },
-  ];
-  const sizeContainer = document.createElement("div");
-  sizes.forEach((size) => {
-    const radio = document.createElement("input");
-    radio.type = "radio";
-    radio.id = size.id;
-    radio.name = "size";
-    radio.value = size.id;
-
-    const label = document.createElement("label");
-    label.htmlFor = size.id;
-    label.textContent = size.name;
-
-    sizeContainer.appendChild(radio);
-    sizeContainer.appendChild(label);
-  });
-
-  container.appendChild(sizeContainer);
 
   const toppings = [
-    { id: "cheese", name: "Cheese" },
-    { id: "kebab", name: "Kebab" },
-    { id: "blue_cheese", name: "Blue Cheese" },
-    { id: "pepperoni", name: "Pepperoni" },
-    { id: "mushrooms", name: "Mushrooms" },
-    { id: "green_peppers", name: "Green Peppers" },
-    { id: "black_olives", name: "Black Olives" },
-    { id: "pineapple", name: "Pineapple" },
-    { id: "sausage", name: "Sausage" },
-    { id: "onions", name: "Onions" },
-    { id: "ham", name: "Ham" },
-    { id: "bacon", name: "Bacon" },
-    { id: "tomatoes", name: "Tomatoes" },
+    { id: "cheese", name: "Cheese", price: 0.75 },
+    { id: "kebab", name: "Kebab", price: 0.75 },
+    { id: "blue_cheese", name: "Blue Cheese", price: 0.75 },
+    { id: "pepperoni", name: "Pepperoni", price: 0.75 },
+    { id: "mushrooms", name: "Mushrooms", price: 0.75 },
+    { id: "green_peppers", name: "Green Peppers", price: 0.75 },
+    { id: "black_olives", name: "Black Olives", price: 0.75 },
+    { id: "pineapple", name: "Pineapple", price: 0.75 },
+    { id: "sausage", name: "Sausage", price: 0.75 },
+    { id: "onions", name: "Onions", price: 0.75 },
+    { id: "ham", name: "Ham", price: 0.75 },
+    { id: "bacon", name: "Bacon", price: 0.75 },
+    { id: "tomatoes", name: "Tomatoes", price: 0.75 },
   ];
+
   toppings.forEach((topping) => {
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.id = topping.id;
     checkbox.name = "toppings";
-    checkbox.value = topping.id;
+    checkbox.value = topping.name; // Käytetään topping.name, joka sisältää välilyönnin
+    checkbox.dataset.price = topping.price; // Lisätään hinta data-attribuuttiin
 
     const label = document.createElement("label");
     label.htmlFor = topping.id;
-    label.textContent = topping.name;
+    label.textContent = `${topping.name} (${topping.price}€)`;
 
     const listItem = document.createElement("li");
     listItem.appendChild(checkbox);
@@ -230,4 +210,58 @@ document.getElementById("nav_pizzalink").addEventListener("click", function () {
 
   document.getElementById("create-page").style.display = "block";
 });
-/** */
+// Aloitin tänään tästä
+
+document
+  .getElementById("submitToppings")
+  .addEventListener("click", function () {
+    const size = document.querySelector('input[name="size"]:checked').value;
+    const base = document.querySelector('input[name="base"]:checked').value;
+    const toppings = Array.from(
+      document.querySelectorAll('input[name="toppings"]:checked'),
+    ).map((el) => el.value);
+    const toppingsString = toppings.join(", ");
+
+    const imageName = "favicon.png"; // Käytetään aina favicon.png-kuvaa
+
+    // Luo uusi elementti ostoskoriin lisättävälle pizzalle
+    const newItem = document.createElement("li");
+    newItem.classList.add("cart-item");
+
+    const img = document.createElement("img");
+    img.src = `img/${imageName}`; // Oletetaan, että kuvat sijaitsevat 'img'-kansiossa
+    img.alt = `Pizza ${size}`;
+    img.classList.add("cart-item-image");
+
+    const text = document.createElement("div");
+    text.textContent = `Pizza: ${size}, Pohja: ${base}, Täytteet: ${toppingsString}`;
+    text.classList.add("cart-item-text");
+
+    newItem.appendChild(img);
+    newItem.appendChild(text);
+    document.querySelector(".cart-items").appendChild(newItem);
+
+    // Ilmoitus pizzan lisäämisestä ostoskoriin
+    alert("Pizza lisätty ostoskoriin!");
+
+    // Tyhjennä valinnat uuden tilauksen valmistelua varten
+    document
+      .querySelectorAll(
+        'input[name="size"], input[name="base"], input[name="toppings"]',
+      )
+      .forEach((input) => {
+        input.checked = false;
+      });
+  });
+
+// KUN PAINETAAN OSTOSKORIA
+document
+  .getElementById("shoppingCartIcon")
+  .addEventListener("click", function () {
+    const cart = document.querySelector(".cart-items");
+    if (cart.style.display === "block") {
+      cart.style.display = "none"; // Piilota ostoskori, jos se on jo avoinna
+    } else {
+      cart.style.display = "block"; // Näytä ostoskori, jos se on suljettu
+    }
+  });

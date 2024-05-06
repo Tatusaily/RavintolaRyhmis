@@ -235,7 +235,20 @@ footer {
   margin-right: 30px;
 }
 
+/* create your own pizza ALKAA TÄSTÄ */
 
+/*.creatingOwnPizza{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  background: var(--secondary-gradient);
+  padding: 5%;
+  box-shadow: var(--shadow);
+
+}
+*/
 #create-page {
     display: none;
     padding: 20px;
@@ -243,22 +256,23 @@ footer {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     margin-top: -50px;
-    width: 30%;
+    width: 50%;
 }
-
-
-#toppings-container li {
-    padding: 5px;
+/* Otsikko*/
+.otsikko{
+    font-size: 20px;
 }
-
-input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-label {
+/* Pizza Teksti*/
+.teksti{
     font-size: 16px;
-    color: var(--text-color);
 }
+
+/* size*/
+.Size{
+    font-size: 16px;
+
+}
+
 
 button {
     padding: 10px 15px;
@@ -281,6 +295,45 @@ button:hover {
     --background-color: #FFF1D7;
     --text-color: #333;
 }
+/* Aloitin tästä tänään */
+.cart-items {
+  list-style-type: none;  /* Poistetaan listaelementtien edestä pisteet */
+  padding: 0;
+}
 
+.cart-items li {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+
+
+}
+
+.cart-items {
+  list-style-type: none;
+  padding: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: absolute; /* Tai sijoita sopivasti layouttiisi */
+  width: 300px; /* Säädä leveys tarpeen mukaan */
+  top: 60px; /* Säädä sijaintia tarpeen mukaan */
+  left: -300; /* Säädä sijaintia tarpeen mukaan */
+  display: none; /* Alkuun piilotettu */
+}
+
+/* Näytä ostoskori kun se on avattu */
+.cart-item-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.cart-item-text{
+  font-size: 16px;
+}
+/* Näyttää ostoskorissa tuotteiden määrän */
 
 

@@ -31,13 +31,9 @@
       </div>
 
       <div class="shoppingCart">
-        <!--ostoskori tähän-->
-        <ul class="cart-items">
-          <!-- Ostoskorin tuotteet tähän -->
-        </ul>
-
+        <!-- Ostoskorin kuvake tai linkki -->
         <svg
-          id="add-to-cart"
+          id="shoppingCartIcon"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           width="24"
@@ -53,6 +49,11 @@
             d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
           />
         </svg>
+
+        <!-- Ostoskorin tuotteet -->
+        <ul class="cart-items" style="display: none">
+          <!-- Ostoskorin sisältö lisätään tänne dynaamisesti -->
+        </ul>
       </div>
       <nav>
         <ul>
@@ -114,25 +115,64 @@
       <div class="contentpage" id="menu-page"></div>
 
       <!-- creating your own pizza -->
+
       <div class="contentpage" id="create-page">
-        <h3>Create your own pizza</h3>
-        <p>Size</p>
-        <div id="toppings-container">
-          <!-- Täytteet lisätään tähän -->
-          <div id="lihat" class="topping-category">
-            <h4>Lihat</h4>
-            <!-- Täytteet lisätään tähän diviin -->
-          </div>
-          <div id="juustot" class="topping-category">
-            <h4>Juustot</h4>
-            <!-- Täytteet lisätään tähän diviin -->
-          </div>
-          <div id="muut" class="topping-category">
-            <h4>Muut</h4>
-            <!-- Täytteet lisätään tähän diviin -->
-          </div>
+        <h3 class="otsikko">PERFETTA</h3>
+        <p class="teksti">
+          Pizza kuin suoraan päiväunistasi, sillä sen täytteet päätät sinä.
+          Kokeile, miksaa, hulluttele ja löydä se maistuvin makumaailma juuri
+          sinulle.
+        </p>
+        <!-- Pizza Koko Valinnat -->
+        <div>
+          <h3>Koko</h3>
+          <label>
+            <input type="radio" name="size" value="Pieni" data-price="5" />
+            Pieni (5€) </label
+          ><br />
+          <label>
+            <input
+              type="radio"
+              name="size"
+              value="Normaali"
+              data-price="8"
+              checked
+            />
+            Normaali (8€) </label
+          ><br />
+          <label>
+            <input type="radio" name="size" value="Iso" data-price="14" /> Iso
+            (14€)
+          </label>
         </div>
-        <button onclick="submitToppings()">Lisää ostoskoriin</button>
+
+        <!-- Pohja Valinnat -->
+        <div>
+          <h3>Pohja</h3>
+          <label>
+            <input
+              type="radio"
+              name="base"
+              value="Normaali"
+              data-price="0"
+              checked
+            />
+            Normaali (0€) </label
+          ><br />
+          <label>
+            <input type="radio" name="base" value="Paksu" data-price="1" />
+            Paksu (1€)
+          </label>
+        </div>
+
+        <!-- Täytteet -->
+        <div id="toppings-container">
+          <h3>Täytteet</h3>
+          ><br />
+          <!-- Lisää täytteitä samalla tavalla -->
+        </div>
+
+        <button id="submitToppings">Lisää ostoskoriin</button>
       </div>
     </main>
     <footer>
