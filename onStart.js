@@ -194,8 +194,8 @@ document.getElementById("nav_pizzalink").addEventListener("click", function () {
     checkbox.type = "checkbox";
     checkbox.id = topping.id;
     checkbox.name = "toppings";
-    checkbox.value = topping.name; // Käytetään topping.name, joka sisältää välilyönnin
-    checkbox.dataset.price = topping.price; // Lisätään hinta data-attribuuttiin
+    checkbox.value = topping.name;
+    checkbox.dataset.price = topping.price;
 
     const label = document.createElement("label");
     label.htmlFor = topping.id;
@@ -235,12 +235,12 @@ document
     newItem.classList.add("cart-item");
 
     const img = document.createElement("img");
-    img.src = `img/favicon.png`; // Käytetään aina favicon.png-kuvaa
+    img.src = `img/favicon.png`;
     img.alt = `Pizza ${sizeElement.value}`;
     img.classList.add("cart-item-image");
 
     const text = document.createElement("div");
-    text.textContent = `Pizza: ${sizeElement.value}, Pohja: ${baseElement.value}, Täytteet: ${toppingsElements.map((el) => el.value).join(", ")} - Hinta: ${totalOrderPrice.toFixed(2)}€`;
+    text.textContent = `Pizza: ${sizeElement.value}, Pohja: ${baseElement.value}, Täytteet: ${toppingsElements.map((el) => el.value).join(", ")}`;
     text.classList.add("cart-item-text");
 
     // Napit määrän muuttamiseen ostoskorissa

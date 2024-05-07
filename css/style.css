@@ -237,18 +237,6 @@ footer {
 
 /* create your own pizza ALKAA TÄSTÄ */
 
-/*.creatingOwnPizza{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 50%;
-  background: var(--secondary-gradient);
-  padding: 5%;
-  box-shadow: var(--shadow);
-
-}
-*/
 #create-page {
     display: none;
     padding: 20px;
@@ -297,7 +285,7 @@ button:hover {
 }
 /* Aloitin tästä tänään */
 .cart-items {
-  list-style-type: none;  /* Poistetaan listaelementtien edestä pisteet */
+  list-style-type: none;
   padding: 0;
 }
 
@@ -317,11 +305,11 @@ button:hover {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  position: absolute; /* Tai sijoita sopivasti layouttiisi */
-  width: 300px; /* Säädä leveys tarpeen mukaan */
-  top: 60px; /* Säädä sijaintia tarpeen mukaan */
-  left: -300; /* Säädä sijaintia tarpeen mukaan */
-  display: none; /* Alkuun piilotettu */
+  position: absolute;
+  width: 300px;
+  top: 60px;
+  left: -300;
+  display: none;
 }
 
 /* Näytä ostoskori kun se on avattu */
