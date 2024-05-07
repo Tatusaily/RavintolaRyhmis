@@ -161,6 +161,10 @@ menupage.appendChild(pizzaGrid);
 
 
 // Create element for each pizza in list
+const dialog = document.createElement('div');
+dialog.classList.add('dialog');
+document.body.appendChild(dialog);
+
 pizzas.forEach(pizza => {
     const pizzaBit = document.createElement('a');
     const pizzaImg = document.createElement('img');
@@ -179,14 +183,59 @@ pizzas.forEach(pizza => {
     pizzaInfo.appendChild(pizzaName);
     pizzaInfo.appendChild(pizzaPrice);
     pizzaInfo.appendChild(pizzaText);
-    pizzaBit.href = `#`;
     pizzaBit.classList.add('pizza');
     pizzaGrid.appendChild(pizzaBit);
     // SCRIPT THAT RUNS WHEN PIZZA IS CLICKED ---- ABDU!!!!!
     pizzaBit.addEventListener('click', () => {
         // ADD PIZZA TO BASKET
         console.log('Added pizza to basket:', pizza.name);
+
+        pizzas.forEach(pizza => {
+          // ... existing code ...
+
+          pizzaBit.addEventListener('click', (event) => {
+              event.preventDefault(); // Prevent the default action
+              event.stopPropagation(); // Stop the event from propagating to the document
+
+              // Fill the dialog with pizza info
+              dialog.innerHTML = `
+                  <img src="${pizza.image}" alt="${pizza.name}">
+                  <h3>${pizza.name}</h3>
+                  <p>£${pizza.price}</p>
+                  <p>${pizzaText.textContent}</p>
+                  <button onclick="dialog.style.display='none'">Close</button>
+              `;
+
+              // Show the dialog
+              dialog.style.display = 'block';
+          });
+      });
+
+      // Close the dialog when clicking outside of it
+      document.addEventListener('click', (event) => {
+          if (!dialog.contains(event.target) && dialog.style.display === 'block') {
+              dialog.style.display = 'none';
+          }
+      });
+
+        dialog.innerHTML = `
+            <img src="${pizza.image}" alt="${pizza.name}">
+            <h3>${pizza.name}</h3>
+            <p>£${pizza.price}</p>
+            <p>${pizzaText.textContent}</p>
+            <button onclick="dialog.style.display='none'">Close</button>
+        `;
+
+        // Show the dialog
+        dialog.style.display = 'block';
     });
+});
+
+// Close the dialog when clicking outside of it
+document.addEventListener('click', (event) => {
+  if (!dialog.contains(event.target) && dialog.style.display === 'block') {
+      dialog.style.display = 'none';
+  }
 });
 
 // Navbar button functions
