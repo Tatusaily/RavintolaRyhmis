@@ -334,6 +334,40 @@ button:hover {
 .cart-item-text{
   font-size: 16px;
 }
+
+/* Ostoskorissa olevat nappulat */
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-container button {
+  background-color: #ae9a36;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.quantity-container button:hover {
+  background-color: #71d9d9;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #f44336cc;
+}
+
+
+
 /* Näyttää ostoskorissa tuotteiden määrän */
 
 

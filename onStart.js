@@ -222,14 +222,12 @@ document
     ).map((el) => el.value);
     const toppingsString = toppings.join(", ");
 
-    const imageName = "favicon.png"; // Käytetään aina favicon.png-kuvaa
-
     // Luo uusi elementti ostoskoriin lisättävälle pizzalle
     const newItem = document.createElement("li");
     newItem.classList.add("cart-item");
 
     const img = document.createElement("img");
-    img.src = `img/${imageName}`; // Oletetaan, että kuvat sijaitsevat 'img'-kansiossa
+    img.src = `img/favicon.png`; // Käytetään aina favicon.png-kuvaa
     img.alt = `Pizza ${size}`;
     img.classList.add("cart-item-image");
 
@@ -237,11 +235,55 @@ document
     text.textContent = `Pizza: ${size}, Pohja: ${base}, Täytteet: ${toppingsString}`;
     text.classList.add("cart-item-text");
 
+    // Napit määrän muuttamiseen ostoskorissa
+    const quantityContainer = document.createElement("div");
+    quantityContainer.classList.add("quantity-container");
+    // miinus nappula
+    const minusButton = document.createElement("button");
+    minusButton.textContent = "-";
+    minusButton.onclick = function () {
+      const quantity = parseInt(newItem.dataset.quantity);
+      if (quantity > 1) {
+        newItem.dataset.quantity = quantity - 1;
+        updateQuantityDisplay();
+      }
+    };
+    // plus nappula
+    const plusButton = document.createElement("button");
+    plusButton.textContent = "+";
+    plusButton.onclick = function () {
+      const quantity = parseInt(newItem.dataset.quantity);
+      newItem.dataset.quantity = quantity + 1;
+      updateQuantityDisplay();
+    };
+
+    const quantityDisplay = document.createElement("span");
+    quantityDisplay.classList.add("quantity-display");
+
+    function updateQuantityDisplay() {
+      quantityDisplay.textContent = `${newItem.dataset.quantity}`;
+    }
+    // Lisää napit containeriin
+    quantityContainer.appendChild(minusButton);
+    quantityContainer.appendChild(quantityDisplay);
+    quantityContainer.appendChild(plusButton);
+    newItem.dataset.quantity = 1; // Aseta alkuun määräksi 1
+    updateQuantityDisplay();
+
+    // delete nappula
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "✕";
+    deleteButton.classList.add("delete-button");
+    deleteButton.onclick = function () {
+      newItem.remove();
+    };
+
     newItem.appendChild(img);
     newItem.appendChild(text);
+    newItem.appendChild(deleteButton);
+    newItem.appendChild(quantityContainer);
     document.querySelector(".cart-items").appendChild(newItem);
 
-    // Ilmoitus pizzan lisäämisestä ostoskoriin
     alert("Pizza lisätty ostoskoriin!");
 
     // Tyhjennä valinnat uuden tilauksen valmistelua varten
@@ -255,6 +297,7 @@ document
   });
 
 // KUN PAINETAAN OSTOSKORIA
+
 document
   .getElementById("shoppingCartIcon")
   .addEventListener("click", function () {
