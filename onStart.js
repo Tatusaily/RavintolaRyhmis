@@ -215,12 +215,20 @@ document.getElementById("nav_pizzalink").addEventListener("click", function () {
 document
   .getElementById("submitToppings")
   .addEventListener("click", function () {
-    const size = document.querySelector('input[name="size"]:checked').value;
-    const base = document.querySelector('input[name="base"]:checked').value;
-    const toppings = Array.from(
+    const sizeElement = document.querySelector('input[name="size"]:checked');
+    const baseElement = document.querySelector('input[name="base"]:checked');
+    const toppingsElements = Array.from(
       document.querySelectorAll('input[name="toppings"]:checked'),
-    ).map((el) => el.value);
-    const toppingsString = toppings.join(", ");
+    );
+
+    const sizePrice = parseFloat(sizeElement.dataset.price);
+    const basePrice = parseFloat(baseElement.dataset.price);
+    const toppingsPrice = toppingsElements.reduce(
+      (total, el) => total + parseFloat(el.dataset.price),
+      0,
+    );
+
+    const totalOrderPrice = sizePrice + basePrice + toppingsPrice;
 
     // Luo uusi elementti ostoskoriin lisättävälle pizzalle
     const newItem = document.createElement("li");
@@ -228,17 +236,18 @@ document
 
     const img = document.createElement("img");
     img.src = `img/favicon.png`; // Käytetään aina favicon.png-kuvaa
-    img.alt = `Pizza ${size}`;
+    img.alt = `Pizza ${sizeElement.value}`;
     img.classList.add("cart-item-image");
 
     const text = document.createElement("div");
-    text.textContent = `Pizza: ${size}, Pohja: ${base}, Täytteet: ${toppingsString}`;
+    text.textContent = `Pizza: ${sizeElement.value}, Pohja: ${baseElement.value}, Täytteet: ${toppingsElements.map((el) => el.value).join(", ")} - Hinta: ${totalOrderPrice.toFixed(2)}€`;
     text.classList.add("cart-item-text");
 
     // Napit määrän muuttamiseen ostoskorissa
     const quantityContainer = document.createElement("div");
     quantityContainer.classList.add("quantity-container");
-    // miinus nappula
+
+    // Miinus nappula
     const minusButton = document.createElement("button");
     minusButton.textContent = "-";
     minusButton.onclick = function () {
@@ -248,7 +257,8 @@ document
         updateQuantityDisplay();
       }
     };
-    // plus nappula
+
+    // Plus nappula
     const plusButton = document.createElement("button");
     plusButton.textContent = "+";
     plusButton.onclick = function () {
@@ -261,16 +271,17 @@ document
     quantityDisplay.classList.add("quantity-display");
 
     function updateQuantityDisplay() {
-      quantityDisplay.textContent = `${newItem.dataset.quantity}`;
+      quantityDisplay.textContent = `${newItem.dataset.quantity} kpl - Yhteensä: ${(totalOrderPrice * newItem.dataset.quantity).toFixed(2)}€`;
     }
-    // Lisää napit containeriin
+
     quantityContainer.appendChild(minusButton);
     quantityContainer.appendChild(quantityDisplay);
     quantityContainer.appendChild(plusButton);
-    newItem.dataset.quantity = 1; // Aseta alkuun määräksi 1
+
+    newItem.dataset.quantity = 1; // Aseta alkuun 1
     updateQuantityDisplay();
 
-    // delete nappula
+    // Delete nappula
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "✕";
     deleteButton.classList.add("delete-button");
