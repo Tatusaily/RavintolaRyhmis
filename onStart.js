@@ -199,21 +199,24 @@ pizzas.forEach(pizza => {
 
               // Fill the dialog with pizza info
               dialog.innerHTML = `
-                  <img src="${pizza.image}" alt="${pizza.name}">
+                <img src="${pizza.image}" alt="${pizza.name}">
+                <div class="dialog-text">
                   <h3>${pizza.name}</h3>
                   <p>£${pizza.price}</p>
                   <p>${pizzaText.textContent}</p>
-                  <button onclick="dialog.style.display='none'">Close</button>
+                  <button class="shopping-cart"><i class='bx bx-cart-alt'></i></button>
+                  <button class="dialog-button" onclick="dialog.style.display='none'">Close</button>
+                </div>
               `;
 
               // Show the dialog
-              dialog.style.display = 'block';
+              dialog.style.display = 'flex';
           });
       });
 
       // Close the dialog when clicking outside of it
       document.addEventListener('click', (event) => {
-          if (!dialog.contains(event.target) && dialog.style.display === 'block') {
+          if (!dialog.contains(event.target) && dialog.style.display === 'flex') {
               dialog.style.display = 'none';
           }
       });

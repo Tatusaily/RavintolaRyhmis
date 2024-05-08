@@ -241,14 +241,34 @@ nav .active {
   padding: 20px;
   border: 1px solid black;
   margin-top: 3.5%;
+  flex-direction: row;
 }
 
 .dialog img {
   width: 50%;
   height: 50%;
   object-fit: cover;
+  border: black 1px solid;
+  box-shadow: var(--shadow);
 }
 
+.dialog-text {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0 5%;
+}
+
+.dialog button {
+  background: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  padding: 0.5rem;
+  margin: 60% 0.5rem 0.5rem 0.5rem;
+  cursor: pointer;
+  border: black 1px solid;
+  box-shadow: var(--shadow);
+}
 
 
 .slider {
