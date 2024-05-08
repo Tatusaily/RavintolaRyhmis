@@ -139,66 +139,64 @@ const pizzas = [
 ];
 
 // Create menu title
-const menuTitle = document.createElement('div');
-const menuTitleBox = document.createElement('div');
-const menuTitleText = document.createElement('h2');
+const menuTitle = document.createElement("div");
+const menuTitleBox = document.createElement("div");
+const menuTitleText = document.createElement("h2");
 
-menuTitle.classList.add('menu-title');
-menuTitleBox.classList.add('menu-title-box');
-menuTitleText.classList.add('menu-title-text');
-menuTitleText.textContent = 'MENU';
+menuTitle.classList.add("menu-title");
+menuTitleBox.classList.add("menu-title-box");
+menuTitleText.classList.add("menu-title-text");
+menuTitleText.textContent = "MENU";
 
 menuTitle.appendChild(menuTitleBox);
 menuTitleBox.appendChild(menuTitleText);
 menupage.appendChild(menuTitle);
 
 // Create pizza grid
-const pizzaGrid = document.createElement('div');
-pizzaGrid.id = 'pizza-grid';
+const pizzaGrid = document.createElement("div");
+pizzaGrid.id = "pizza-grid";
 menupage.appendChild(pizzaGrid);
 
-
-
-
 // Create element for each pizza in list
-const dialog = document.createElement('div');
-dialog.classList.add('dialog');
+const dialog = document.createElement("div");
+dialog.classList.add("dialog");
 document.body.appendChild(dialog);
 
-pizzas.forEach(pizza => {
-    const pizzaBit = document.createElement('a');
-    const pizzaImg = document.createElement('img');
-    const pizzaInfo = document.createElement('div');
-    const pizzaName = document.createElement('h3');
-    const pizzaPrice = document.createElement('p');
-    const pizzaText = document.createElement('p');
-    pizzaText.textContent = 'lorem ipsum dolor sit amet, consectetur adipiscing elit.';
-    pizzaInfo.classList.add('pizza-info');
-    pizzaImg.src = pizza.image;
-    pizzaImg.alt = pizza.name;
-    pizzaName.textContent = pizza.name;
-    pizzaPrice.textContent = `£${pizza.price}`;
-    pizzaBit.appendChild(pizzaImg);
-    pizzaBit.appendChild(pizzaInfo);
-    pizzaInfo.appendChild(pizzaName);
-    pizzaInfo.appendChild(pizzaPrice);
-    pizzaInfo.appendChild(pizzaText);
-    pizzaBit.classList.add('pizza');
-    pizzaGrid.appendChild(pizzaBit);
-    // SCRIPT THAT RUNS WHEN PIZZA IS CLICKED ---- ABDU!!!!!
-    pizzaBit.addEventListener('click', () => {
-        // ADD PIZZA TO BASKET
-        console.log('Added pizza to basket:', pizza.name);
+pizzas.forEach((pizza) => {
+  const pizzaBit = document.createElement("a");
+  const pizzaImg = document.createElement("img");
+  const pizzaInfo = document.createElement("div");
+  const pizzaName = document.createElement("h3");
+  const pizzaPrice = document.createElement("p");
+  const pizzaText = document.createElement("p");
+  pizzaText.textContent =
+    "lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+  pizzaInfo.classList.add("pizza-info");
+  pizzaImg.src = pizza.image;
+  pizzaImg.alt = pizza.name;
+  pizzaName.textContent = pizza.name;
+  pizzaPrice.textContent = `£${pizza.price}`;
+  pizzaBit.appendChild(pizzaImg);
+  pizzaBit.appendChild(pizzaInfo);
+  pizzaInfo.appendChild(pizzaName);
+  pizzaInfo.appendChild(pizzaPrice);
+  pizzaInfo.appendChild(pizzaText);
+  pizzaBit.classList.add("pizza");
+  pizzaGrid.appendChild(pizzaBit);
+  // SCRIPT THAT RUNS WHEN PIZZA IS CLICKED ---- ABDU!!!!!
+  pizzaBit.addEventListener("click", () => {
+    // ADD PIZZA TO BASKET
+    console.log("Added pizza to basket:", pizza.name);
 
-        pizzas.forEach(pizza => {
-          // ... existing code ...
+    pizzas.forEach((pizza) => {
+      // ... existing code ...
 
-          pizzaBit.addEventListener('click', (event) => {
-              event.preventDefault(); // Prevent the default action
-              event.stopPropagation(); // Stop the event from propagating to the document
+      pizzaBit.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent the default action
+        event.stopPropagation(); // Stop the event from propagating to the document
 
-              // Fill the dialog with pizza info
-              dialog.innerHTML = `
+        // Fill the dialog with pizza info
+        dialog.innerHTML = `
                   <img src="${pizza.image}" alt="${pizza.name}">
                   <h3>${pizza.name}</h3>
                   <p>£${pizza.price}</p>
@@ -206,19 +204,19 @@ pizzas.forEach(pizza => {
                   <button onclick="dialog.style.display='none'">Close</button>
               `;
 
-              // Show the dialog
-              dialog.style.display = 'block';
-          });
+        // Show the dialog
+        dialog.style.display = "block";
       });
+    });
 
-      // Close the dialog when clicking outside of it
-      document.addEventListener('click', (event) => {
-          if (!dialog.contains(event.target) && dialog.style.display === 'block') {
-              dialog.style.display = 'none';
-          }
-      });
+    // Close the dialog when clicking outside of it
+    document.addEventListener("click", (event) => {
+      if (!dialog.contains(event.target) && dialog.style.display === "block") {
+        dialog.style.display = "none";
+      }
+    });
 
-        dialog.innerHTML = `
+    dialog.innerHTML = `
             <img src="${pizza.image}" alt="${pizza.name}">
             <h3>${pizza.name}</h3>
             <p>£${pizza.price}</p>
@@ -226,15 +224,15 @@ pizzas.forEach(pizza => {
             <button onclick="dialog.style.display='none'">Close</button>
         `;
 
-        // Show the dialog
-        dialog.style.display = 'block';
-    });
+    // Show the dialog
+    dialog.style.display = "block";
+  });
 });
 
 // Close the dialog when clicking outside of it
-document.addEventListener('click', (event) => {
-  if (!dialog.contains(event.target) && dialog.style.display === 'block') {
-      dialog.style.display = 'none';
+document.addEventListener("click", (event) => {
+  if (!dialog.contains(event.target) && dialog.style.display === "block") {
+    dialog.style.display = "none";
   }
 });
 
