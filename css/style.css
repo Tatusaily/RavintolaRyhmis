@@ -160,6 +160,7 @@ nav .active {
 .menu-title h2 {
   font-family: var(--header-font);
   color: var(--white);
+  background-color: var(--secondary-color);
   font-size: 3rem;
   margin-bottom: 4%;
   border: 2px solid var(--primary-color);

@@ -224,25 +224,7 @@ pizzas.forEach(pizza => {
               dialog.style.display = 'none';
           }
       });
-
-        dialog.innerHTML = `
-            <img src="${pizza.image}" alt="${pizza.name}">
-            <h3>${pizza.name}</h3>
-            <p>£${pizza.price}</p>
-            <p>${pizzaText.textContent}</p>
-            <button onclick="dialog.style.display='none'">Close</button>
-        `;
-
-        // Show the dialog
-        dialog.style.display = 'block';
     });
-});
-
-// Close the dialog when clicking outside of it
-document.addEventListener('click', (event) => {
-  if (!dialog.contains(event.target) && dialog.style.display === 'block') {
-      dialog.style.display = 'none';
-  }
 });
 
 // Navbar button functions
