@@ -5,16 +5,19 @@
 const homepage = document.getElementById("home-page");
 const menupage = document.getElementById("menu-page");
 const pizzapage = document.getElementById("create-page");
-const sitepages = [homepage, menupage, pizzapage];
+const profilePage = document.getElementById("profile-page");
+const sitepages = [homepage, menupage, pizzapage, profilePage];
 const homepageLink = document.getElementById("nav_homelink");
 const menupageLink = document.getElementById("nav_menulink");
 const pizzapageLink = document.getElementById("nav_pizzalink");
-const pageLinks = [homepageLink, menupageLink, pizzapageLink];
+const profilePageLink = document.getElementById("profileLink");
+const pageLinks = [homepageLink, menupageLink, pizzapageLink, profilePageLink];
 
 // Set the href attributes of the page links to the corresponding hashes
 homepageLink.href = "#home";
 menupageLink.href = "#menu";
 pizzapageLink.href = "#create";
+profilePageLink.href = "#profile";
 
 // Function to handle hash changes
 function handleHashChange() {
@@ -37,6 +40,10 @@ function handleHashChange() {
     case "#create":
       pizzapage.style.display = "flex";
       pizzapageLink.classList.add("active");
+      break;
+    case "#profile":
+      profilePage.style.display = "flex";
+      profilePage.classList.add("active");
       break;
     default:
       homepage.style.display = "flex";
