@@ -140,16 +140,13 @@ const pizzas = [
 
 // Create menu title
 const menuTitle = document.createElement('div');
-const menuTitleBox = document.createElement('div');
 const menuTitleText = document.createElement('h2');
 
 menuTitle.classList.add('menu-title');
-menuTitleBox.classList.add('menu-title-box');
 menuTitleText.classList.add('menu-title-text');
 menuTitleText.textContent = 'MENU';
 
-menuTitle.appendChild(menuTitleBox);
-menuTitleBox.appendChild(menuTitleText);
+menuTitle.appendChild(menuTitleText);
 menupage.appendChild(menuTitle);
 
 // Create pizza grid
