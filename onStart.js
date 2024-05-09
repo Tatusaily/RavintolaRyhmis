@@ -443,3 +443,14 @@ document
   });
 
 // KUN PAINETAAN OSTOSKORIA
+
+document
+  .getElementById("shoppingCartIcon")
+  .addEventListener("click", function () {
+    const cart = document.querySelector(".cart-items");
+    if (cart.style.display === "block") {
+      cart.style.display = "none"; // Piilota ostoskori, jos se on jo avoinna
+    } else {
+      cart.style.display = "block"; // Näytä ostoskori, jos se on suljettu
+    }
+  });
