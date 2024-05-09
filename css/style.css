@@ -71,7 +71,7 @@ nav ul{
 nav a {
     padding: 0 1rem;
     text-decoration: none;
-    color: var(--text-color);
+    color: white;
     font-size: 25px;
 }
 
@@ -88,6 +88,9 @@ nav .active {
     display: flex;
     align-items: center;
     margin-left: 10%;
+}
+.logo h1 {
+  color: white;
 }
 .user-info {
     display: flex;

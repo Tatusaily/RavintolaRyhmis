@@ -436,7 +436,7 @@ document
     img.classList.add("cart-item-image");
 
     const text = document.createElement("div");
-    text.textContent = `Pizza: ${sizeElement.value}, Pohja: ${baseElement.value}, Täytteet: ${toppingsElements.map((el) => el.value).join(", ")}`;
+    text.textContent = `Pizza: ${sizeElement.value}, Base: ${baseElement.value}, Toppings: ${toppingsElements.map((el) => el.value).join(", ")}`;
     text.classList.add("cart-item-text");
 
     // Napit määrän muuttamiseen ostoskorissa
