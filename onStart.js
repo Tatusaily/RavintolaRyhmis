@@ -314,8 +314,15 @@ document.getElementById("nav_pizzalink").addEventListener("click", function () {
   container.innerHTML = "";
 
   // Luo pizzan valintanapit
-  
-  const toppings = getToppings();
+
+  const toppings = [
+    { id: "topping1", name: "Pepperoni", price: 1.5 },
+    { id: "topping2", name: "Mushrooms", price: 1 },
+    { id: "topping3", name: "Olives", price: 0.5 },
+    { id: "topping4", name: "Bacon", price: 1.5 },
+    { id: "topping5", name: "Onions", price: 0.5 },
+    { id: "topping6", name: "Extra cheese", price: 1 },
+  ];
 
   toppings.forEach((topping) => {
     const checkbox = document.createElement("input");
@@ -436,14 +443,3 @@ document
   });
 
 // KUN PAINETAAN OSTOSKORIA
-
-document
-  .getElementById("shoppingCartIcon")
-  .addEventListener("click", function () {
-    const cart = document.querySelector(".cart-items");
-    if (cart.style.display === "block") {
-      cart.style.display = "none"; // Piilota ostoskori, jos se on jo avoinna
-    } else {
-      cart.style.display = "block"; // Näytä ostoskori, jos se on suljettu
-    }
-  });
