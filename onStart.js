@@ -239,14 +239,59 @@ for (let i = 0; i < sitepages.length; i++) {
   });
 }
 
-// User dropdown menu
-document.querySelector(".user-info").addEventListener("click", () => {
-  const dropdownMenu = document.querySelector("#dropdown-menu");
-  if (dropdownMenu.style.display === "none") {
-    dropdownMenu.style.display = "flex";
-  } else {
-    dropdownMenu.style.display = "none";
+// Login modal and form
+const loginmodal = document.createElement("div");
+loginmodal.classList.add("login-modal");
+document.body.appendChild(loginmodal);
+loginmodal.style.display = "none";
+
+document.addEventListener("click", (event) => {
+  if (!loginmodal.contains(event.target) && event.target !== document.querySelector(".user-info")){
+    loginmodal.style.display = "none";
   }
+});
+
+const form = document.createElement("form");
+  loginmodal.appendChild(form);
+  const inputname = document.createElement("input");
+  inputname.type = "text";
+  inputname.placeholder = "Name";
+  inputname.required = true;
+  inputname.id = "loginformname";
+  form.appendChild(inputname);
+
+  const inputpassword = document.createElement("input");
+  inputpassword.type = "password";
+  inputpassword.placeholder = "Password";
+  inputpassword.required = true;
+  inputpassword.id = "loginformpassword";
+  form.appendChild(inputpassword);
+
+  const login = document.createElement("button");
+  login.textContent = "Login";
+  form.appendChild(login);
+  login.addEventListener("click", () => {
+    const name = document.getElementById("loginformname").value;
+    const password = document.getElementById("loginformpassword").value;
+    const user = { name, password };
+    loginUser(user).then((response) => {
+      if (response.status === 200) {
+        alert("Login successful!");
+        loginmodal.style.display = "none";
+      } else {
+        alert("Login failed. Please try again.");
+      }
+    });
+  });
+
+  const register = document.createElement("button");
+  register.textContent = "Register";
+  form.appendChild(register);
+  register.addEventListener("click", () => {
+  });
+
+document.querySelector(".user-info").addEventListener("click", () => {
+  loginmodal.style.display = "flex";
 });
 
 // Home page slideshow
