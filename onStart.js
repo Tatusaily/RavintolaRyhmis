@@ -271,7 +271,6 @@ const form = document.createElement("form");
   login.textContent = "Login";
   form.appendChild(login);
   login.addEventListener("click", () => {
-    preventDefault();
     const name = document.getElementById("loginformname").value;
     const password = document.getElementById("loginformpassword").value;
     const user = { name, password };
@@ -291,7 +290,6 @@ const form = document.createElement("form");
   register.textContent = "Register";
   form.appendChild(register);
   register.addEventListener("click", () => {
-    preventDefault();
     const name = document.getElementById("loginformname").value;
     const password = document.getElementById("loginformpassword").value;
     const user = { name, password };
@@ -306,6 +304,7 @@ const form = document.createElement("form");
       }
     });
   });
+
   form.addEventListener("submit", (event) => {
     event.preventDefault();
   });
