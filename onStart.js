@@ -37,7 +37,7 @@ function handleHashChange() {
       menupageLink.classList.add("active");
       break;
     case "#create":
-      pizzapage.style.display = "flex";
+      pizzapage.style.display = "block";
       pizzapageLink.classList.add("active");
       break;
     case "#profile":
@@ -146,11 +146,9 @@ const pizzas = [
 
 // Create menu title
 const menuTitle = document.createElement("div");
-const menuTitleBox = document.createElement("div");
 const menuTitleText = document.createElement("h2");
 
 menuTitle.classList.add("menu-title");
-menuTitleBox.classList.add("menu-title-box");
 menuTitleText.classList.add("menu-title-text");
 menuTitleText.textContent = "MENU";
 
@@ -203,12 +201,14 @@ pizzas.forEach((pizza) => {
         // Fill the dialog with pizza info
         dialog.innerHTML = `
                   <img src="${pizza.image}" alt="${pizza.name}">
-                  <h3>${pizza.name}</h3>
-                  <p>£${pizza.price}</p>
-                  <p>${pizzaText.textContent}</p>
-                  <button class="shopping-cart"><i class='bx bx-cart-alt'></i></button>
-                  <button class="dialog-button" onclick="dialog.style.display='none'">Close</button>
-              `;
+                  <div class="dialog-text">
+                    <h3>${pizza.name}</h3>
+                    <p>£${pizza.price}</p>
+                    <p>${pizzaText.textContent}</p>
+                    <button class="shopping-cart"><i class='bx bx-cart-alt'></i></button>
+                    <button class="dialog-button" onclick="dialog.style.display='none'">Close</button>
+                  </div>
+                `;
 
         // Show the dialog
         dialog.style.display = "flex";

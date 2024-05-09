@@ -2,7 +2,7 @@
   --primary-color: #BB3E00;
   --secondary-color: #F7AD45;
   --background-color: #FFF1D7;
-  --text-color: #FFFF;
+  --text-color: #333;
   --shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
   --header-height: 5rem;
   --primary-gradient: linear-gradient(239deg, rgba(255,128,65,1) 0%, rgba(187,62,0,1) 100%);
@@ -72,6 +72,7 @@ nav a {
     padding: 0 1rem;
     text-decoration: none;
     color: var(--text-color);
+    font-size: 25px;
 }
 
 nav a:hover {
@@ -157,26 +158,13 @@ nav .active {
   padding: 5%;
 }
 
-.menu-title {
-  border: 2px solid black;
-  padding: 0.2rem;
-  min-height: fit-content;
-  min-width: fit-content;
-}
-.menu-title div {
-  border: 2px dashed black;
-  padding: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.menu-title div h2 {
-  font-family: var(--menu-font);
-  color: white;
-  font-size: 1.5rem;
-  margin-bottom: 2%;
-  text-shadow: 2px 2px 4px black;
+.menu-title h2 {
+  font-family: var(--header-font);
+  color: var(--white);
+  font-size: 3rem;
+  margin-bottom: 4%;
+  border: 2px solid var(--primary-color);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #pizza-grid {
@@ -247,6 +235,26 @@ nav .active {
   width: 50%;
   height: 50%;
   object-fit: cover;
+  border: black 1px solid;
+  box-shadow: var(--shadow);
+}
+
+.dialog-text {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0 5%;
+}
+
+.dialog button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  margin: 60% 0.5rem 0.5rem 0.5rem;
+  cursor: pointer;
+  border: black 1px solid;
+  box-shadow: var(--shadow);
 }
 
 
@@ -350,12 +358,14 @@ footer {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  position: fixed;
+  right: 5%;
 }
 
 .shoppingCart svg {
   width: 48px;
   height: 48px;
-  margin-right: 30px;
+  margin-right: 1rem;
 }
 
 /* create your own pizza ALKAA TÄSTÄ */
@@ -400,12 +410,6 @@ button:hover {
     background-color: var(--secondary-color);
 }
 
-:root {
-    --primary-color: #BB3E00;
-    --secondary-color: #F7AD45;
-    --background-color: #FFF1D7;
-    --text-color: #333;
-}
 /* Ostoskorin sisällä olevat asiat*/
 .cart-items {
   list-style-type: none;
@@ -416,6 +420,7 @@ button:hover {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   position: absolute;
   width: 300px;
+  min-height: 200px;
   top: 60px;
   left: -300;
   display: none;
@@ -438,10 +443,12 @@ button:hover {
 .quantity-container {
   display: flex;
   align-items: center;
+  margin-top: 2%;
 }
 
 .quantity-container button {
   background-color: #ae9a36;
+  margin-top: 2%;
   border: none;
   padding: 5px 10px;
   margin: 0 5px;
@@ -479,8 +486,7 @@ button:hover {
 }
 
 
-
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   #pizza-grid {
     grid-template-columns: 1fr; /* Only one column on small screens */
     grid-gap: 2%;
@@ -494,6 +500,28 @@ button:hover {
   .logo {
     margin-left: 3%;
     flex-direction: column;
+  }
+
+  header {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .shoppingCart {
+    position: fixed;
+    right: 0;
+    top: 0;
+    font-size: 15px;
+    margin-right: 0;
+  }
+  .user-info {
+    position: fixed;
+    left: 0;
+    top: 0;
+    margin-left: 2%;
+    margin-top: 2%;
+    width: 20%;
+    height: 4%;
   }
 
   .nav a {
@@ -529,10 +557,27 @@ button:hover {
     font-size: 15px;;
   }
 
-  #nav_pizzalink {
-    font-size: 12px;
-    display: flex;
-    flex-wrap: wrap;
+  #create-page {
+    width: 100%;
+    margin-top: 15%;
+  }
+
+  #menu-page {
+    margin-top: 20%;
+  }
+
+  #home-page {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  #home-page .slider {
+    width: 100%;
+  }
+
+  #home-page .create {
+    width: 100%;
+    text-align: center;
   }
 
 
