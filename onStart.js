@@ -1,5 +1,4 @@
 // Let's put code that we want to run on start here:
-
 //CONSTS
 // Pages and links in same order, used in event listeners
 const homepage = document.getElementById("home-page");
@@ -37,7 +36,7 @@ function handleHashChange() {
       menupageLink.classList.add("active");
       break;
     case "#create":
-      pizzapage.style.display = "flex";
+      pizzapage.style.display = "block";
       pizzapageLink.classList.add("active");
       break;
     case "#profile":
@@ -315,22 +314,8 @@ document.getElementById("nav_pizzalink").addEventListener("click", function () {
   container.innerHTML = "";
 
   // Luo pizzan valintanapit
-
-  const toppings = [
-    { id: "cheese", name: "Cheese", price: 0.75 },
-    { id: "kebab", name: "Kebab", price: 0.75 },
-    { id: "blue_cheese", name: "Blue Cheese", price: 0.75 },
-    { id: "pepperoni", name: "Pepperoni", price: 0.75 },
-    { id: "mushrooms", name: "Mushrooms", price: 0.75 },
-    { id: "green_peppers", name: "Green Peppers", price: 0.75 },
-    { id: "black_olives", name: "Black Olives", price: 0.75 },
-    { id: "pineapple", name: "Pineapple", price: 0.75 },
-    { id: "sausage", name: "Sausage", price: 0.75 },
-    { id: "onions", name: "Onions", price: 0.75 },
-    { id: "ham", name: "Ham", price: 0.75 },
-    { id: "bacon", name: "Bacon", price: 0.75 },
-    { id: "tomatoes", name: "Tomatoes", price: 0.75 },
-  ];
+  
+  const toppings = getToppings();
 
   toppings.forEach((topping) => {
     const checkbox = document.createElement("input");
