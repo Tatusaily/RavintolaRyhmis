@@ -229,7 +229,17 @@ nav .active {
   padding: 20px;
   border: 1px solid black;
   margin-top: 3.5%;
+}
 
+.login-modal form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-modal button {
+  margin-top: 2%;
 }
 
 .dialog {
@@ -359,12 +369,21 @@ nav .active {
     font-family: var(--text-font);
 }
 
+.create:hover {
+    cursor: pointer;
+    border: 2px solid white;
+}
+
 footer {
   width: 100%;
   height: 5rem;
   background: var(--primary-gradient);
   font-family: var(--text-font);
   padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .shoppingCart {
@@ -485,13 +504,9 @@ button:hover {
   background-color: #f44336cc;
 }
 
-
-
-/* Näyttää ostoskorissa tuotteiden määrän */
-
 .menu-title h2 {
   font-family: var(--header-font);
-  color: var(--white);
+  color: white;
   background-color: var(--secondary-color);
   font-size: 3rem;
   margin-bottom: 4%;

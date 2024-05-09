@@ -223,6 +223,7 @@ pizzas.forEach((pizza) => {
   });
 });
 
+
 // Navbar button functions
 for (let i = 0; i < sitepages.length; i++) {
   pageLinks[i].addEventListener("click", () => {
@@ -285,6 +286,10 @@ const form = document.createElement("form");
       }
     });
   });
+
+  document.querySelector('.create').addEventListener('click', function() {
+    window.location.href = '#create';
+});
 
   const register = document.createElement("button");
   register.textContent = "Register";
@@ -378,7 +383,7 @@ document.getElementById("nav_pizzalink").addEventListener("click", function () {
   container.innerHTML = "";
 
   // Luo pizzan valintanapit
-  
+
   const toppings = getToppings();
 
   toppings.forEach((topping) => {
@@ -402,7 +407,6 @@ document.getElementById("nav_pizzalink").addEventListener("click", function () {
 
   document.getElementById("create-page").style.display = "block";
 });
-// Aloitin tänään tästä
 
 document
   .getElementById("submitToppings")
