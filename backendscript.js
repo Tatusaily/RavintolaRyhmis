@@ -1,5 +1,5 @@
 
-const IPaddress = "https://10.120.32.53"
+const IPaddress = "https://10.120.32.53/app/api/v1"
 
 const getPizzasDefault = async () => {
     const response = await fetch(`${IPaddress}/pizzas`);
