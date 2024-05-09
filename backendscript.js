@@ -22,6 +22,7 @@ const getUsers = async () => {
 const postUser = async (user) => {
     const response = await fetch(`${IPaddress}/users`, {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json'
         },
@@ -33,6 +34,7 @@ const postUser = async (user) => {
 const loginUser = async (user) => {
     const response = await fetch(`${IPaddress}/auth/login`, {
         method: 'POST',
+        mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json'
         },
