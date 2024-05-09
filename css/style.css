@@ -69,9 +69,9 @@ nav ul{
 }
 
 nav a {
-    padding: 0 1rem; /* Add padding to the left and right of each link */
+    padding: 0 1rem;
     text-decoration: none;
-    color: var(--text-color); /* Set the text color to a dark grey */
+    color: var(--text-color);
 }
 
 nav a:hover {
@@ -351,4 +351,64 @@ footer {
   background: var(--primary-gradient);
   font-family: var(--text-font);
   padding: 0.5rem 1rem;
+}
+
+@media (max-width: 600px) {
+  #pizza-grid {
+    grid-template-columns: 1fr; /* Only one column on small screens */
+    grid-gap: 2%;
+    margin-top: 10%;
+  }
+
+  .menu-title {
+    display: none;
+  }
+
+  .logo {
+    margin-left: 3%;
+    flex-direction: column;
+  }
+
+  .nav a {
+    padding: 0 0.5rem; /* Smaller padding on small screens */
+    font-size: px;
+  }
+
+  .dialog {
+    flex-direction: column;
+    padding: 5px;
+    align-items: center;
+  }
+
+  .dialog-text {
+    margin: 0;
+    text-align: center;
+
+    flex-direction: row;
+  }
+
+  .dialog button {
+    margin: 0.5rem;
+  }
+
+  nav ul { /* Center the menu items on small screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  nav a {
+    font-size: 15px;;
+  }
+
+  #nav_pizzalink {
+    font-size: 12px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+
+
+  /* Add any other responsive styles you need here */
 }
