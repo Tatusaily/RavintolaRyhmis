@@ -406,21 +406,7 @@ button:hover {
     --background-color: #FFF1D7;
     --text-color: #333;
 }
-/* Aloitin tästä tänään */
-.cart-items {
-  list-style-type: none;
-  padding: 0;
-}
-
-.cart-items li {
-  background-color: #f0f0f0;
-  padding: 10px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-
-
-}
-
+/* Ostoskorin sisällä olevat asiat*/
 .cart-items {
   list-style-type: none;
   padding: 10px;
@@ -434,6 +420,7 @@ button:hover {
   left: -300;
   display: none;
 }
+
 
 /* Näytä ostoskori kun se on avattu */
 .cart-item-image {
@@ -480,5 +467,15 @@ button:hover {
 
 
 /* Näyttää ostoskorissa tuotteiden määrän */
+
+.menu-title h2 {
+  font-family: var(--header-font);
+  color: var(--white);
+  background-color: var(--secondary-color);
+  font-size: 3rem;
+  margin-bottom: 4%;
+  border: 2px solid var(--primary-color);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 
 
