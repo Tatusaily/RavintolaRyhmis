@@ -291,6 +291,20 @@ const form = document.createElement("form");
   register.textContent = "Register";
   form.appendChild(register);
   register.addEventListener("click", () => {
+    preventDefault();
+    const name = document.getElementById("loginformname").value;
+    const password = document.getElementById("loginformpassword").value;
+    const user = { name, password };
+    postUser(user).then((response) => {
+      if (response.status === 200) {
+        alert("User registered successfully!");
+        console.log("User registered:", name);
+        loginmodal.style.display = "none";
+      } else {
+        console.log("Registration failed. Please try again.");
+        alert("Registration failed. Please try again.");
+      }
+    });
   });
 
 document.querySelector(".user-info").addEventListener("click", () => {
