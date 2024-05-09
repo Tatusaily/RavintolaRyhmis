@@ -271,14 +271,17 @@ const form = document.createElement("form");
   login.textContent = "Login";
   form.appendChild(login);
   login.addEventListener("click", () => {
+    preventDefault();
     const name = document.getElementById("loginformname").value;
     const password = document.getElementById("loginformpassword").value;
     const user = { name, password };
     loginUser(user).then((response) => {
       if (response.status === 200) {
         alert("Login successful!");
+        console.log("User logged in:", name);
         loginmodal.style.display = "none";
       } else {
+        console.log("Login failed. Please try again.");
         alert("Login failed. Please try again.");
       }
     });
