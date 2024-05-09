@@ -306,6 +306,9 @@ const form = document.createElement("form");
       }
     });
   });
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+  });
 
 document.querySelector(".user-info").addEventListener("click", () => {
   loginmodal.style.display = "flex";
