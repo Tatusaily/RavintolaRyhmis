@@ -44,7 +44,8 @@ const loginUser = async (user) => {
 }
 
 const getToppings = async () => {
-    const response = await fetch(`${IPaddress}/misc/toppings`);
+    const response = await fetch(`${IPaddress}/misc/toppings`
+    );
     const toppings = await response.json();
     return toppings;
 }
