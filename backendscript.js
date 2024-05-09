@@ -30,3 +30,8 @@ const postUser = async (user) => {
     return response;
 }
 
+const getToppings = async () => {
+    const response = await fetch(`${IPaddress}/misc/toppings`);
+    const toppings = await response.json();
+    return toppings;
+}
