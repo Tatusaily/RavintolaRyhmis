@@ -6,4 +6,5 @@ To use the webpage, you can either host it yourself, or navigate to a pre-hosted
 The page communicates with a backend software hosted at 10.120.32.53
 You must be in the Metropolia VPN to use the functionality.
 
-The backend can be found at [link](https://github.com/Tatusaily/RavintolaRyhmisBackend).
+The backend repository can be found at [link](https://github.com/Tatusaily/RavintolaRyhmisBackend).
+The backend is hosted at [link](http://10.120.32.53/app/)
