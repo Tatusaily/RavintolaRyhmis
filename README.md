@@ -8,3 +8,7 @@ You must be in the Metropolia VPN to use the functionality.
 
 The backend repository can be found at [link](https://github.com/Tatusaily/RavintolaRyhmisBackend).
 The backend is hosted at [link](http://10.120.32.53/app/)
+
+
+
+![image](https://github.com/user-attachments/assets/37e767cf-5ded-4e4f-9e4d-0f94cdd5f073)
